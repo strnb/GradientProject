@@ -1,5 +1,5 @@
-#ifndef SECURITY_H
-#define SECURITY_H
+#ifndef CRYPTO_UTILS_H
+#define CRYPTO_UTILS_H
 
 #include <string>
 
