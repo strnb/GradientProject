@@ -1,41 +1,14 @@
-#include "crypto_utils.h"
+#include <QApplication>
 
-#include <iostream>
-#include <string>
+#include "loginwindow.h"
 
-int main()
+int main(int argc, char *argv[])
 {
-    std::string text = "Hello";
+    QApplication app(argc, argv);
 
-    std::string key = "secret";
+    LoginWindow window;
 
-    // Шифрование
-    std::string encrypted =
-        encrypt(text, key);
+    window.show();
 
-    // Расшифровка
-    std::string decrypted =
-        decrypt(encrypted, key);
-
-    // Хеширование пароля
-    std::string hash =
-        hashPassword("12345");
-
-    std::cout << "Original: "
-              << text
-              << std::endl;
-
-    std::cout << "Encrypted: "
-              << encrypted
-              << std::endl;
-
-    std::cout << "Decrypted: "
-              << decrypted
-              << std::endl;
-
-    std::cout << "SHA-256: "
-              << hash
-              << std::endl;
-
-    return 0;
+    return app.exec();
 }

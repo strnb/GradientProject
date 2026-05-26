@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui version="4.0">
+
+    <class>UserWindow</class>
+
+    <widget class="QMainWindow" name="UserWindow">
+
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>500</width>
+                <height>400</height>
+            </rect>
+        </property>
+
+        <property name="windowTitle">
+            <string>User Panel</string>
+        </property>
+
+        <widget class="QWidget" name="centralwidget">
+
+            <widget class="QPushButton" name="vigenereButton">
+
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>60</y>
+                        <width>220</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Шифр Виженера</string>
+                </property>
+
+            </widget>
+
+            <widget class="QPushButton" name="shaButton">
+
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>130</y>
+                        <width>220</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>SHA-256</string>
+                </property>
+
+            </widget>
+
+            <widget class="QPushButton" name="splineButton">
+
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>200</y>
+                        <width>220</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Метод сплайнов</string>
+                </property>
+
+            </widget>
+
+            <widget class="QPushButton" name="gradientButton">
+
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>270</y>
+                        <width>220</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Градиентный спуск</string>
+                </property>
+
+            </widget>
+
+        </widget>
+
+    </widget>
+
+    <resources/>
+    <connections/>
+
+</ui>
