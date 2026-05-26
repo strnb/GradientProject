@@ -5,6 +5,8 @@ services:
   postgres:
     image: postgres:17
 
+    container_name: gradient_postgres
+
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
@@ -15,19 +17,26 @@ services:
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+    restart: always
 
   server:
     build:
       context: ..
-
       dockerfile: docker/Dockerfile
+
+    container_name: gradient_server
 
     depends_on:
       - postgres
 
     ports:
       - "5000:5000"
+
+    stdin_open: true
+    tty: true
+
+    restart: always
 
 volumes:
   postgres_data:
