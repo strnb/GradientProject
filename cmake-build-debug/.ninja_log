@@ -1,0 +1,15 @@
+# ninja log v7
+6	24	8010824611918983	clean	d755921063b9a9f2
+8	1517	8010808345048597	server/CMakeFiles/server.dir/main.cpp.obj	c077c6075373f6ce
+13	1178	8010824613494604	client/CMakeFiles/client.dir/main.cpp.obj	ec05a93ab84ac47f
+16	1850	8010803859309840	server/CMakeFiles/server.dir/__/shared/security.cpp.obj	f672b23182b9c33b
+1870	2078	8010808363662893	server/server.exe	80b9651054df22ae
+1403	2617	8010803873180921	client/CMakeFiles/client.dir/__/shared/security.cpp.obj	4a08cda9d0ca6139
+1491	1661	8010809990306968	client/client.exe	8fa8e80dffe52a23
+16	1869	8010808345128557	server/CMakeFiles/server.dir/__/shared/crypto_utils.cpp.obj	3ca47b867c250fdc
+20	997	8010824613574562	client/CMakeFiles/client.dir/__/shared/crypto_utils.cpp.obj	22bd71409d10f396
+16	36	8010828185117841	clean	d755921063b9a9f2
+32	1258	8010828187466481	client/CMakeFiles/client.dir/__/shared/crypto_utils.cpp.obj	22bd71409d10f396
+18	1469	8010828187326557	client/CMakeFiles/client.dir/main.cpp.obj	ec05a93ab84ac47f
+40	1756	8010828187556423	client/CMakeFiles/client.dir/__/shared/sha256.cpp.obj	f053c8c05f29910f
+1756	1940	8010828204710799	client/client.exe	200091519ee56ba9

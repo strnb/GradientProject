@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/cmake_install.cmake",
+		"C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/client/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,5 @@
+C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/client/CMakeFiles/client.dir
+C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/client/CMakeFiles/edit_cache.dir
+C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/client/CMakeFiles/rebuild_cache.dir

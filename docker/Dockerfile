@@ -1,4 +1,17 @@
-FROM ubuntu:latest
-LABEL authors="Admin"
+FROM ubuntu:24.04
 
-ENTRYPOINT ["top", "-b"]
+RUN apt update && apt install -y \
+    g++ \
+    cmake \
+    make \
+    libpq-dev
+
+WORKDIR /app
+
+COPY . .
+
+RUN mkdir build && cd build && \
+    cmake .. && \
+    make
+
+CMD ["./build/server"]

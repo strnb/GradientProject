@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -IC:/Users/Admin/CLionProjects/GradientProject/client/../shared -g -std=gnu++17 -fdiagnostics-color=always -o client\\CMakeFiles\\client.dir\\main.cpp.obj -c C:\\Users\\Admin\\CLionProjects\\GradientProject\\client\\main.cpp",
+  "file": "C:/Users/Admin/CLionProjects/GradientProject/client/main.cpp",
+  "output": "C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/client/CMakeFiles/client.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -IC:/Users/Admin/CLionProjects/GradientProject/client/../shared -g -std=gnu++17 -fdiagnostics-color=always -o client\\CMakeFiles\\client.dir\\__\\shared\\crypto_utils.cpp.obj -c C:\\Users\\Admin\\CLionProjects\\GradientProject\\shared\\crypto_utils.cpp",
+  "file": "C:/Users/Admin/CLionProjects/GradientProject/shared/crypto_utils.cpp",
+  "output": "C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/client/CMakeFiles/client.dir/__/shared/crypto_utils.cpp.obj"
+},
+{
+  "directory": "C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -IC:/Users/Admin/CLionProjects/GradientProject/client/../shared -g -std=gnu++17 -fdiagnostics-color=always -o client\\CMakeFiles\\client.dir\\__\\shared\\sha256.cpp.obj -c C:\\Users\\Admin\\CLionProjects\\GradientProject\\shared\\sha256.cpp",
+  "file": "C:/Users/Admin/CLionProjects/GradientProject/shared/sha256.cpp",
+  "output": "C:/Users/Admin/CLionProjects/GradientProject/cmake-build-debug/client/CMakeFiles/client.dir/__/shared/sha256.cpp.obj"
+}
+]
