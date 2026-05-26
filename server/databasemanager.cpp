@@ -13,10 +13,12 @@ void DatabaseDestroyer::initialize(DatabaseManager *p) {
 
 DatabaseManager::DatabaseManager() {
     db = QSqlDatabase::addDatabase("QPSQL");
-    db.setHostName("localhost");
-    db.setDatabaseName("your_db_name"); // Имя твоей БД (например, zhes_db)
-    db.setUserName("postgres");
-    db.setPassword("your_password");
+    
+    // ВАЖНО: Указываем имя контейнера из docker-compose вместо localhost
+    db.setHostName("postgres"); 
+    db.setDatabaseName("gradient_db"); 
+    db.setUserName("admin");
+    db.setPassword("admin");
     db.setPort(5432);
 }
 
@@ -45,7 +47,8 @@ bool DatabaseManager::connectToDatabase() {
 
 bool DatabaseManager::registerUser(const QString &login, const QString &passwordHash) {
     QSqlQuery query;
-    query.prepare("INSERT INTO users (login, password_hash, role) VALUES (:login, :pass, 'user')");
+    // Соответствие твоей структуре init.sql: login, password, role
+    query.prepare("INSERT INTO users (login, password, role) VALUES (:login, :pass, 'user')");
     query.bindValue(":login", login);
     query.bindValue(":pass", passwordHash);
     
@@ -58,12 +61,13 @@ bool DatabaseManager::registerUser(const QString &login, const QString &password
 
 QString DatabaseManager::authUser(const QString &login, const QString &passwordHash) {
     QSqlQuery query;
-    query.prepare("SELECT role FROM users WHERE login = :login AND password_hash = :pass");
+    // Соответствие твоей структуре init.sql: выбор поля role
+    query.prepare("SELECT role FROM users WHERE login = :login AND password = :pass");
     query.bindValue(":login", login);
     query.bindValue(":pass", passwordHash);
     
     if (query.exec() && query.next()) {
-        return query.value(0).toString(); // Возвращает роль ('user' или 'admin')
+        return query.value(0).toString();
     }
-    return ""; // Авторизация провалена
+    return "";
 }
