@@ -1,56 +1,117 @@
 #include "mytcpserver.h"
+#include "databasemanager.h"
+#include "../shared/crypto_utils.h" // Твоя библиотека хэширования
 #include <QDebug>
-#include <QCoreApplication>
-#include<QString>
 
-MyTcpServer::~MyTcpServer()
-{
-
-    mTcpServer->close();
-    //server_status=0;
-}
-
-MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
+MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent) {
     mTcpServer = new QTcpServer(this);
 
-    connect(mTcpServer, &QTcpServer::newConnection,
-            this, &MyTcpServer::slotNewConnection);
+    connect(mTcpServer, &QTcpServer::newConnection, this, &MyTcpServer::slotNewConnection);
 
     if(!mTcpServer->listen(QHostAddress::Any, 33333)){
-        qDebug() << "server is not started";
+        qDebug() << "Сервер не запущен.";
     } else {
-        //server_status=1;
-        qDebug() << "server is started";
+        qDebug() << "Сервер запущен на порту 33333...";
     }
 }
 
-void MyTcpServer::slotNewConnection(){
- //   if(server_status==1){
-        mTcpSocket = mTcpServer->nextPendingConnection();
-        mTcpSocket->write("Hello, World!!! I am echo server!\r\n");
-        connect(mTcpSocket, &QTcpSocket::readyRead,this,&MyTcpServer::slotServerRead);
-        connect(mTcpSocket,&QTcpSocket::disconnected,this,&MyTcpServer::slotClientDisconnected);
-   // }
+MyTcpServer::~MyTcpServer() {
+    for (QTcpSocket* socket : mClientSockets) {
+        socket->close();
+    }
+    mTcpServer->close();
 }
 
-void MyTcpServer::slotServerRead(){
-    QString res = "";
-    while(mTcpSocket->bytesAvailable()>0)
-    {
-        QByteArray array =mTcpSocket->readAll();
-        qDebug()<<array<<"\n";
-        if(array=="\x01")
-        {
-            mTcpSocket->write(res.toUtf8());
-            res = "";
+void MyTcpServer::slotNewConnection() {
+    QTcpSocket *clientSocket = mTcpServer->nextPendingConnection();
+    mClientSockets.append(clientSocket); // Добавляем клиента в список
+
+    connect(clientSocket, &QTcpSocket::readyRead, this, &MyTcpServer::slotServerRead);
+    connect(clientSocket, &QTcpSocket::disconnected, this, &MyTcpServer::slotClientDisconnected);
+
+    clientSocket->write("CONNECTED;WELCOME\r\n");
+    qDebug() << "Новое подключение. Всего клиентов:" << mClientSockets.count();
+}
+
+void MyTcpServer::slotServerRead() {
+    QTcpSocket *clientSocket = qobject_cast<QTcpSocket*>(sender());
+    if (!clientSocket) return;
+
+    while(clientSocket->bytesAvailable() > 0) {
+        QByteArray array = clientSocket->readAll();
+        QString request = QString::fromUtf8(array).trimmed();
+        qDebug() << "Получено от клиента:" << request;
+        
+        parseRequest(clientSocket, request);
+    }
+}
+
+void MyTcpServer::parseRequest(QTcpSocket* socket, const QString &request) {
+    // Протокол формата: КОМАНДА;параметр1;параметр2
+    QStringList tokens = request.split(";");
+    if (tokens.isEmpty()) return;
+
+    QString command = tokens.at(0);
+
+    if (command == "REG") {
+        if (tokens.size() < 3) return;
+        QString login = tokens.at(1);
+        QString rawPassword = tokens.at(2);
+        
+        // Хэширование пароля средствами твоей crypto_utils
+        std::string hashStr = hashPassword(rawPassword.toStdString());
+        QString passwordHash = QString::fromStdString(hashStr);
+
+        // Работа с БД через Синглтон
+        if (DatabaseManager::getInstance()->registerUser(login, passwordHash)) {
+            socket->write("REG;SUCCESS\r\n");
+        } else {
+            socket->write("REG;FAILED\r\n");
         }
-        else
-            res.append(array);
-    }
-    mTcpSocket->write(res.toUtf8());
+    } 
+    else if (command == "AUTH") {
+        if (tokens.size() < 3) return;
+        QString login = tokens.at(1);
+        QString rawPassword = tokens.at(2);
 
+        std::string hashStr = hashPassword(rawPassword.toStdString());
+        QString passwordHash = QString::fromStdString(hashStr);
+
+        // Получаем роль пользователя из БД через Синглтон
+        QString role = DatabaseManager::getInstance()->authUser(login, passwordHash);
+        if (!role.isEmpty()) {
+            socket->write(QString("AUTH;SUCCESS;%1\r\n").arg(role).toUtf8());
+        } else {
+            socket->write("AUTH;FAILED\r\n");
+        }
+    } 
+    else if (command == "GET_DATA") {
+        handleGetMainData(socket);
+    } 
+    else if (command == "ADMIN_CMD") {
+        handleAdminFunction(socket);
+    } 
+    else {
+        socket->write("ERROR;UNKNOWN_COMMAND\r\n");
+    }
 }
 
-void MyTcpServer::slotClientDisconnected(){
-    mTcpSocket->close();
+// Заглушки функционала (Пункт плана выполнен)
+void MyTcpServer::handleGetMainData(QTcpSocket* socket) {
+    // Заглушка вместо реальной логики (например, выгрузки данных ЖЭС)
+    socket->write("DATA;STUB_OBJECT_1;STUB_OBJECT_2\r\n");
+}
+
+void MyTcpServer::handleAdminFunction(QTcpSocket* socket) {
+    // Заглушка для админ-панели
+    socket->write("ADMIN;STUB_LOGS_AND_MANAGEMENT\r\n");
+}
+
+void MyTcpServer::slotClientDisconnected() {
+    QTcpSocket *clientSocket = qobject_cast<QTcpSocket*>(sender());
+    if (clientSocket) {
+        mClientSockets.removeOne(clientSocket);
+        clientSocket->deleteLater();
+        qDebug() << "Клиент отключился. Осталось клиентов:" << mClientSockets.count();
+    }
 }

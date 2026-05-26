@@ -1,15 +1,19 @@
-#include "../shared/crypto_utils.h"
+#include <QCoreApplication>
+#include "mytcpserver.h"
+#include "databasemanager.h"
 
-#include <iostream>
-
-int main()
+int main(int argc, char *argv[])
 {
-    std::string password = "12345";
+    QCoreApplication a(argc, argv);
 
-    std::string hash =
-        hashPassword(password);
+    // Подключаем БД через синглтон
+    if (!DatabaseManager::getInstance()->connectToDatabase()) {
+        qCritical() << "Критическая ошибка: Приложение запущено без БД.";
+        return -1;
+    }
 
-    std::cout << hash << std::endl;
+    // Запускаем сервер
+    MyTcpServer server;
 
-    return 0;
+    return a.exec();
 }
