@@ -68,8 +68,7 @@ void MyTcpServer::parseRequest(QTcpSocket* socket, const QString &request) {
         } else {
             socket->write("REG;FAILED\r\n");
         }
-    } 
-    else if (command == "AUTH") {
+    } else if (command == "AUTH") {
         if (tokens.size() < 3) return;
         QString login = tokens.at(1);
         QString rawPassword = tokens.at(2);
@@ -84,14 +83,30 @@ void MyTcpServer::parseRequest(QTcpSocket* socket, const QString &request) {
         } else {
             socket->write("AUTH;FAILED\r\n");
         }
-    } 
-    else if (command == "GET_DATA") {
+    } else if (command == "GET_DATA") {
         handleGetMainData(socket);
-    } 
-    else if (command == "ADMIN_CMD") {
+    } else if (command == "ADMIN_CMD") {
         handleAdminFunction(socket);
-    } 
-    else {
+    } else if (command == "CALC_GRAD") {
+        std::string func;
+        double start, lr;
+        int iter;
+
+        iss >> func >> start >> lr >> iter;
+
+        double result = gradientDescent(func, start, lr, iter);
+
+        return "RESULT " + std::to_string(result);
+    } else if (command == "CALC_SPLINE") {
+        std::vector<double> x = { 1, 2, 3, 4 };
+        std::vector<double> y = { 2, 3, 2, 5 };
+
+        double query = 2.5;
+
+        double result = splineInterpolate(x, y, query);
+
+        return "RESULT " + std::to_string(result);
+    } else {
         socket->write("ERROR;UNKNOWN_COMMAND\r\n");
     }
 }
