@@ -3,10 +3,6 @@
 
 #include <string>
 
-std::string hashPassword(
-    const std::string& password
-);
-
 std::string encrypt(
     const std::string& text,
     const std::string& key
@@ -15,6 +11,10 @@ std::string encrypt(
 std::string decrypt(
     const std::string& text,
     const std::string& key
+);
+
+std::string hashPassword(
+    const std::string& password
 );
 
 #endif

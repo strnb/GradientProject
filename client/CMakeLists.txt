@@ -1,9 +1,43 @@
+cmake_minimum_required(VERSION 3.20)
+
+project(client)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+set(CMAKE_PREFIX_PATH "C:/Qt/6.11.1/mingw_64")
+
+find_package(Qt6 REQUIRED COMPONENTS
+        Core
+        Widgets
+)
+
 add_executable(client
         main.cpp
+
+        loginwindow.cpp
+        loginwindow.h
+        loginwindow.ui
+
+        userwindow.cpp
+        userwindow.h
+        userwindow.ui
+
+        shawindow.cpp
+        shawindow.h
+        shawindow.ui
+
         ../shared/crypto_utils.cpp
         ../shared/sha256.cpp
 )
 
+target_link_libraries(client
+        Qt6::Core
+        Qt6::Widgets
+)
 target_include_directories(client PRIVATE
         ../shared
 )
