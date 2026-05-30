@@ -4,6 +4,7 @@
 #include "shawindow.h"
 #include "splinewindow.h"
 #include "gradientwindow.h"
+#include "vigenerewindow.h"
 
 #include <QPushButton>
 #include <QMessageBox>
@@ -14,21 +15,6 @@ UserWindow::UserWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // VIGENERE
-
-    connect(
-        ui->vigenereButton,
-        &QPushButton::clicked,
-        this,
-        []()
-        {
-            QMessageBox::information(
-                nullptr,
-                "Vigenere",
-                "Vigenere cipher window"
-            );
-        }
-    );
 
     // SHA-256 WINDOW
 
@@ -55,8 +41,10 @@ UserWindow::UserWindow(QWidget *parent)
         this,
         [this]()
         {
-            auto* window = new SplineWindow(this);
+            auto* window = new SplineWindow();
             window->show();
+
+            this->close();
         }
     );
 
@@ -68,8 +56,26 @@ UserWindow::UserWindow(QWidget *parent)
         this,
         [this]()
         {
-            auto* window = new GradientWindow(this);
+            auto* window = new GradientWindow();
             window->show();
+
+            this->close();
+        }
+    );
+
+    // VIGENERE
+
+    connect(
+        ui->vigenereButton,
+        &QPushButton::clicked,
+        this,
+        [this]()
+        {
+            auto* window = new VigenereWindow();
+
+            window->show();
+
+            this->close();
         }
     );
 }

@@ -1,5 +1,6 @@
 #include "gradientwindow.h"
 #include "ui_gradientwindow.h"
+#include "userwindow.h"
 
 #include "../shared/gradient.h"
 
@@ -49,7 +50,9 @@ GradientWindow::GradientWindow(QWidget* parent)
         this,
         [this]()
         {
-            close();
+            auto* menu = new UserWindow();
+            menu->show();
+            this->close();
         }
     );
 }

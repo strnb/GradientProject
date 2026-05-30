@@ -42,6 +42,11 @@ add_executable(client
         splinewindow.cpp
         splinewindow.h
         splinewindow.ui
+        ../shared/vigenere.h
+        ../shared/vigenere.cpp
+        vigenerewindow.cpp
+        vigenerewindow.h
+        vigenerewindow.ui
 )
 
 target_link_libraries(client

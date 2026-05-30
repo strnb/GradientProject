@@ -1,5 +1,6 @@
 #include "splinewindow.h"
 #include "ui_splinewindow.h"
+#include "userwindow.h"
 
 #include "../shared/spline.h"
 
@@ -79,6 +80,8 @@ SplineWindow::SplineWindow(QWidget* parent)
         this,
         [this]()
         {
+            auto* menu = new UserWindow();
+            menu->show();
             this->close();
         }
     );
