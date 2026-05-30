@@ -32,6 +32,16 @@ add_executable(client
 
         ../shared/crypto_utils.cpp
         ../shared/sha256.cpp
+        ../shared/spline.cpp
+        ../shared/gradient.cpp
+
+        gradientwindow.cpp
+        gradientwindow.h
+        gradientwindow.ui
+
+        splinewindow.cpp
+        splinewindow.h
+        splinewindow.ui
 )
 
 target_link_libraries(client

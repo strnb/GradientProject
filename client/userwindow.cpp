@@ -2,6 +2,8 @@
 #include "ui_userwindow.h"
 
 #include "shawindow.h"
+#include "splinewindow.h"
+#include "gradientwindow.h"
 
 #include <QPushButton>
 #include <QMessageBox>
@@ -51,13 +53,10 @@ UserWindow::UserWindow(QWidget *parent)
         ui->splineButton,
         &QPushButton::clicked,
         this,
-        []()
+        [this]()
         {
-            QMessageBox::information(
-                nullptr,
-                "Splines",
-                "Spline interpolation window"
-            );
+            auto* window = new SplineWindow(this);
+            window->show();
         }
     );
 
@@ -67,13 +66,10 @@ UserWindow::UserWindow(QWidget *parent)
         ui->gradientButton,
         &QPushButton::clicked,
         this,
-        []()
+        [this]()
         {
-            QMessageBox::information(
-                nullptr,
-                "Gradient",
-                "Gradient descent window"
-            );
+            auto* window = new GradientWindow(this);
+            window->show();
         }
     );
 }
