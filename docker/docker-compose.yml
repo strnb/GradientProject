@@ -3,7 +3,7 @@ version: '3.9'
 services:
 
   postgres:
-    image: postgres:17
+    image: cr.yandex/mirror/postgres:17
 
     environment:
       POSTGRES_USER: admin
