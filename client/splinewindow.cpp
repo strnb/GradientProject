@@ -68,6 +68,17 @@ SplineWindow::SplineWindow(QWidget* parent)
                     query
                 );
 
+            auto graph =
+                findChild<SplineGraphWidget*>("graphWidget");
+
+            if (graph)
+            {
+                graph->setData(
+                    x,
+                    y
+                );
+            }
+
             ui->resultLabel->setText(
                 QString::number(result)
             );

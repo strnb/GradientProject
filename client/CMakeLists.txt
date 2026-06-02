@@ -55,6 +55,8 @@ add_executable(client
         msewindow.ui
         ../shared/msegraphwidget.h
         ../shared/msegraphwidget.cpp
+        ../shared/splinegraphwidget.cpp
+        ../shared/splinegraphwidget.h
 
 )
 
