@@ -37,6 +37,23 @@ GradientWindow::GradientWindow(QWidget* parent)
                     learningRate,
                     iterations
                 );
+            auto points =
+                gradientPath(
+                    func.toStdString(),
+                    start,
+                    learningRate,
+                    iterations
+                );
+
+            auto graph =
+                findChild<GradientGraphWidget*>(
+                    "graphWidget"
+                );
+
+            if (graph)
+            {
+                graph->setPoints(points);
+            }
 
             ui->resultLabel->setText(
                 QString::number(result, 'f', 10)

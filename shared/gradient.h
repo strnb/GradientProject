@@ -1,9 +1,10 @@
 #ifndef GRADIENT_H
 #define GRADIENT_H
 
+#include <vector>
 #include <string>
 
-// Основная функция градиентного спуска
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 double gradientDescent(
     const std::string& func,
     double start,
@@ -11,10 +12,17 @@ double gradientDescent(
     int iterations
 );
 
-// Функция для вычисления градиента (производной)
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 double computeGradient(
     const std::string& func,
     double x
+);
+
+std::vector<double> gradientPath(
+    const std::string& func,
+    double start,
+    double learning_rate,
+    int iterations
 );
 
 #endif

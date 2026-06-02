@@ -57,6 +57,8 @@ add_executable(client
         ../shared/msegraphwidget.cpp
         ../shared/splinegraphwidget.cpp
         ../shared/splinegraphwidget.h
+        gradientgraphwidget.cpp
+        gradientgraphwidget.h
 
 )
 
@@ -65,5 +67,6 @@ target_link_libraries(client
         Qt6::Widgets
 )
 target_include_directories(client PRIVATE
+        .
         ../shared
 )

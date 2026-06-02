@@ -9,8 +9,8 @@
             <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>500</width>
-                <height>450</height>
+                <width>700</width>
+                <height>720</height>
             </rect>
         </property>
 
@@ -83,6 +83,17 @@
                         <y>170</y>
                         <width>200</width>
                         <height>30</height>
+                    </rect>
+                </property>
+            </widget>
+
+            <widget class="GradientGraphWidget" name="graphWidget">
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>430</y>
+                        <width>620</width>
+                        <height>220</height>
                     </rect>
                 </property>
             </widget>
@@ -205,5 +216,13 @@
 
     <resources/>
     <connections/>
+
+    <customwidgets>
+        <customwidget>
+            <class>GradientGraphWidget</class>
+            <extends>QWidget</extends>
+            <header>gradientgraphwidget.h</header>
+        </customwidget>
+    </customwidgets>
 
 </ui>

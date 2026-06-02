@@ -2,6 +2,7 @@
 #define GRADIENTWINDOW_H
 
 #include <QMainWindow>
+#include "gradientgraphwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
