@@ -11,7 +11,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>500</width>
-                <height>400</height>
+                <height>470</height>
             </rect>
         </property>
 
@@ -68,6 +68,23 @@
 
                 <property name="text">
                     <string>Метод сплайнов</string>
+                </property>
+
+            </widget>
+
+            <widget class="QPushButton" name="mseButton">
+
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>340</y>
+                        <width>220</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>MSE</string>
                 </property>
 
             </widget>

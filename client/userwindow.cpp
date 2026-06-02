@@ -5,6 +5,7 @@
 #include "splinewindow.h"
 #include "gradientwindow.h"
 #include "vigenerewindow.h"
+#include "msewindow.h"
 
 #include <QPushButton>
 #include <QMessageBox>
@@ -72,6 +73,19 @@ UserWindow::UserWindow(QWidget *parent)
         [this]()
         {
             auto* window = new VigenereWindow();
+
+            window->show();
+
+            this->close();
+        }
+    );
+    connect(
+        ui->mseButton,
+        &QPushButton::clicked,
+        this,
+        [this]()
+        {
+            auto* window = new MSEWindow();
 
             window->show();
 

@@ -34,6 +34,7 @@ add_executable(client
         ../shared/sha256.cpp
         ../shared/spline.cpp
         ../shared/gradient.cpp
+        ../shared/msegraphwidget.cpp
 
         gradientwindow.cpp
         gradientwindow.h
@@ -47,6 +48,14 @@ add_executable(client
         vigenerewindow.cpp
         vigenerewindow.h
         vigenerewindow.ui
+        ../shared/msegraphwidget.cpp
+        ../shared/msegraphwidget.h
+        msewindow.cpp
+        msewindow.h
+        msewindow.ui
+        ../shared/msegraphwidget.h
+        ../shared/msegraphwidget.cpp
+
 )
 
 target_link_libraries(client

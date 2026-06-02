@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>MSEWindow</class>
+
+    <widget class="QMainWindow" name="MSEWindow">
+
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>700</width>
+                <height>600</height>
+            </rect>
+        </property>
+
+        <property name="windowTitle">
+            <string>MSE Analysis</string>
+        </property>
+
+        <widget class="QWidget" name="centralwidget">
+
+            <widget class="QLabel" name="titleLabel">
+                <property name="geometry">
+                    <rect>
+                        <x>250</x>
+                        <y>20</y>
+                        <width>200</width>
+                        <height>30</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>MSE Analysis</string>
+                </property>
+            </widget>
+
+            <widget class="QLabel" name="labelX">
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>80</y>
+                        <width>100</width>
+                        <height>25</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>X values:</string>
+                </property>
+            </widget>
+
+            <widget class="QLineEdit" name="xEdit">
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>80</y>
+                        <width>520</width>
+                        <height>25</height>
+                    </rect>
+                </property>
+            </widget>
+
+            <widget class="QLabel" name="labelY">
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>120</y>
+                        <width>100</width>
+                        <height>25</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Y values:</string>
+                </property>
+            </widget>
+
+            <widget class="QLineEdit" name="yEdit">
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>120</y>
+                        <width>520</width>
+                        <height>25</height>
+                    </rect>
+                </property>
+            </widget>
+
+            <widget class="QPushButton" name="calculateButton">
+                <property name="geometry">
+                    <rect>
+                        <x>280</x>
+                        <y>170</y>
+                        <width>120</width>
+                        <height>35</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Calculate</string>
+                </property>
+            </widget>
+
+            <widget class="QLabel" name="resultLabel">
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>230</y>
+                        <width>250</width>
+                        <height>30</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>MSE: -</string>
+                </property>
+            </widget>
+
+            <widget class="MSEGraphWidget" name="graphWidget">
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>280</y>
+                        <width>620</width>
+                        <height>220</height>
+                    </rect>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        border: 1px solid black;
+                        background-color: white;
+                    </string>
+                </property>
+            </widget>
+
+            <widget class="QPushButton" name="backButton">
+                <property name="geometry">
+                    <rect>
+                        <x>540</x>
+                        <y>520</y>
+                        <width>110</width>
+                        <height>35</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Back</string>
+                </property>
+            </widget>
+
+        </widget>
+
+        <widget class="QMenuBar" name="menubar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>700</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+
+        <widget class="QStatusBar" name="statusbar"/>
+
+    </widget>
+
+    <resources/>
+    <connections/>
+    
+    <customwidgets>
+        <customwidget>
+            <class>MSEGraphWidget</class>
+            <extends>QWidget</extends>
+            <header>msegraphwidget.h</header>
+        </customwidget>
+    </customwidgets>
+
+</ui>
