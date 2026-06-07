@@ -1,10 +1,12 @@
 #include <QCoreApplication>
 #include "mytcpserver.h"
 #include "databasemanager.h"
+#include <windows.h>
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+    SetConsoleOutputCP(CP_UTF8);
 
     // Подключаем БД через синглтон
     if (!DatabaseManager::getInstance()->connectToDatabase()) {

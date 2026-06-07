@@ -1,20 +1,10 @@
-//
-// Created by Admin on 27.05.2026.
-//
-
 #ifndef GRADIENTPROJECT_USERWINDOW_H
 #define GRADIENTPROJECT_USERWINDOW_H
 
 #include <QMainWindow>
 
-
 QT_BEGIN_NAMESPACE
-
-namespace Ui
-{
-    class UserWindow;
-}
-
+namespace Ui { class UserWindow; }
 QT_END_NAMESPACE
 
 class UserWindow : public QMainWindow
@@ -28,6 +18,5 @@ public:
 private:
     Ui::UserWindow* ui;
 };
-
 
 #endif //GRADIENTPROJECT_USERWINDOW_H

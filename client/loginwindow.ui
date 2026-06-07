@@ -9,84 +9,90 @@
                 <x>0</x>
                 <y>0</y>
                 <width>400</width>
-                <height>250</height>
+                <height>280</height>
             </rect>
         </property>
 
         <property name="windowTitle">
-            <string>Authorization</string>
+            <string>Авторизация</string>
         </property>
 
         <widget class="QWidget" name="centralwidget">
 
             <widget class="QLabel" name="loginLabel">
                 <property name="geometry">
-                    <rect>
-                        <x>40</x>
-                        <y>40</y>
-                        <width>100</width>
-                        <height>30</height>
-                    </rect>
+                    <rect><x>40</x><y>40</y><width>100</width><height>30</height></rect>
                 </property>
-
                 <property name="text">
-                    <string>Login</string>
+                    <string>Логин</string>
                 </property>
             </widget>
 
             <widget class="QLineEdit" name="loginEdit">
                 <property name="geometry">
-                    <rect>
-                        <x>140</x>
-                        <y>40</y>
-                        <width>180</width>
-                        <height>30</height>
-                    </rect>
+                    <rect><x>140</x><y>40</y><width>200</width><height>30</height></rect>
                 </property>
             </widget>
 
             <widget class="QLabel" name="passwordLabel">
                 <property name="geometry">
-                    <rect>
-                        <x>40</x>
-                        <y>90</y>
-                        <width>100</width>
-                        <height>30</height>
-                    </rect>
+                    <rect><x>40</x><y>90</y><width>100</width><height>30</height></rect>
                 </property>
-
                 <property name="text">
-                    <string>Password</string>
+                    <string>Пароль</string>
                 </property>
             </widget>
 
             <widget class="QLineEdit" name="passwordEdit">
                 <property name="geometry">
-                    <rect>
-                        <x>140</x>
-                        <y>90</y>
-                        <width>180</width>
-                        <height>30</height>
-                    </rect>
+                    <rect><x>140</x><y>90</y><width>200</width><height>30</height></rect>
                 </property>
-
                 <property name="echoMode">
                     <enum>QLineEdit::Password</enum>
                 </property>
             </widget>
 
+            <!-- Кнопка входа для обычного пользователя -->
             <widget class="QPushButton" name="loginButton">
                 <property name="geometry">
-                    <rect>
-                        <x>140</x>
-                        <y>150</y>
-                        <width>120</width>
-                        <height>35</height>
-                    </rect>
+                    <rect><x>40</x><y>160</y><width>140</width><height>40</height></rect>
                 </property>
-
                 <property name="text">
-                    <string>Login</string>
+                    <string>Войти как пользователь</string>
+                </property>
+                <property name="styleSheet">
+                    <string>QPushButton { background-color: #2980b9; color: white; border-radius: 4px; }
+                        QPushButton:hover { background-color: #3498db; }</string>
+                </property>
+            </widget>
+
+            <!-- Кнопка входа для администратора -->
+            <widget class="QPushButton" name="adminLoginButton">
+                <property name="geometry">
+                    <rect><x>200</x><y>160</y><width>140</width><height>40</height></rect>
+                </property>
+                <property name="text">
+                    <string>Войти как admin</string>
+                </property>
+                <property name="styleSheet">
+                    <string>QPushButton { background-color: #2c3e50; color: white; border-radius: 4px; }
+                        QPushButton:hover { background-color: #34495e; }</string>
+                </property>
+            </widget>
+
+            <!-- Метка статуса подключения -->
+            <widget class="QLabel" name="statusLabel">
+                <property name="geometry">
+                    <rect><x>40</x><y>215</y><width>310</width><height>25</height></rect>
+                </property>
+                <property name="text">
+                    <string>Подключение к серверу...</string>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                </property>
+                <property name="styleSheet">
+                    <string>color: gray; font-size: 11px;</string>
                 </property>
             </widget>
 

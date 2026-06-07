@@ -4,6 +4,8 @@ project(GradientServer VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_PREFIX_PATH "C:/Qt/6.11.1/mingw_64")
+
 # Включаем автоматическую обработку метаобъектов Qt (MOC, user интерфейсы, ресурсы)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)

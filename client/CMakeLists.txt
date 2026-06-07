@@ -13,10 +13,14 @@ set(CMAKE_PREFIX_PATH "C:/Qt/6.11.1/mingw_64")
 find_package(Qt6 REQUIRED COMPONENTS
         Core
         Widgets
+        Network
 )
 
 add_executable(client
         main.cpp
+
+        networkmanager.cpp
+        networkmanager.h
 
         loginwindow.cpp
         loginwindow.h
@@ -26,15 +30,12 @@ add_executable(client
         userwindow.h
         userwindow.ui
 
+        adminwindow.cpp
+        adminwindow.h
+
         shawindow.cpp
         shawindow.h
         shawindow.ui
-
-        ../shared/crypto_utils.cpp
-        ../shared/sha256.cpp
-        ../shared/spline.cpp
-        ../shared/gradient.cpp
-        ../shared/msegraphwidget.cpp
 
         gradientwindow.cpp
         gradientwindow.h
@@ -43,29 +44,36 @@ add_executable(client
         splinewindow.cpp
         splinewindow.h
         splinewindow.ui
-        ../shared/vigenere.h
-        ../shared/vigenere.cpp
+
         vigenerewindow.cpp
         vigenerewindow.h
         vigenerewindow.ui
-        ../shared/msegraphwidget.cpp
-        ../shared/msegraphwidget.h
+
         msewindow.cpp
         msewindow.h
         msewindow.ui
-        ../shared/msegraphwidget.h
-        ../shared/msegraphwidget.cpp
-        ../shared/splinegraphwidget.cpp
-        ../shared/splinegraphwidget.h
+
         gradientgraphwidget.cpp
         gradientgraphwidget.h
 
+        ../shared/crypto_utils.cpp
+        ../shared/sha256.cpp
+        ../shared/spline.cpp
+        ../shared/gradient.cpp
+        ../shared/vigenere.h
+        ../shared/vigenere.cpp
+        ../shared/msegraphwidget.cpp
+        ../shared/msegraphwidget.h
+        ../shared/splinegraphwidget.cpp
+        ../shared/splinegraphwidget.h
 )
 
 target_link_libraries(client
         Qt6::Core
         Qt6::Widgets
+        Qt6::Network
 )
+
 target_include_directories(client PRIVATE
         .
         ../shared

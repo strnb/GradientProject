@@ -1,8 +1,9 @@
 #include "mytcpserver.h"
 #include "databasemanager.h"
-#include "../shared/crypto_utils.h" 
+#include "../shared/crypto_utils.h"
 #include <QDebug>
 #include <QStringList>
+#include <QSqlQuery>
 #include <sstream>
 #include <vector>
 
@@ -104,19 +105,50 @@ void MyTcpServer::parseRequest(QTcpSocket* socket, const QString& request) {
     }
     // 3. ФУНКЦИИ АДМИНИСТРАТИВНОЙ ПАНЕЛИ
     else if (command == "ADMIN_GET_USERS") {
-        socket->write(DatabaseManager::getInstance()->getUsers().toUtf8() + "\r\n");
+        QString data = DatabaseManager::getInstance()->getUsers();
+        socket->write(QString("ADMIN_GET_USERS;%1\r\n").arg(data).toUtf8());
     }
     else if (command == "ADMIN_GET_LOGS") {
-        socket->write(DatabaseManager::getInstance()->getLogs().toUtf8() + "\r\n");
+        QString data = DatabaseManager::getInstance()->getLogs();
+        socket->write(QString("ADMIN_GET_LOGS;%1\r\n").arg(data).toUtf8());
     }
     else if (command == "ADMIN_GET_ERRORS") {
-        socket->write(DatabaseManager::getInstance()->getErrors().toUtf8() + "\r\n");
+        QString data = DatabaseManager::getInstance()->getErrors();
+        socket->write(QString("ADMIN_GET_ERRORS;%1\r\n").arg(data).toUtf8());
     }
     else if (command == "ADMIN_GET_HISTORY") {
-        socket->write(DatabaseManager::getInstance()->getAlgorithmHistory().toUtf8() + "\r\n");
+        QString data = DatabaseManager::getInstance()->getAlgorithmHistory();
+        socket->write(QString("ADMIN_GET_HISTORY;%1\r\n").arg(data).toUtf8());
     }
     else if (command == "ADMIN_GET_TESTS") {
-        socket->write(DatabaseManager::getInstance()->getTestResults().toUtf8() + "\r\n");
+        QString data = DatabaseManager::getInstance()->getTestResults();
+        socket->write(QString("ADMIN_GET_TESTS;%1\r\n").arg(data).toUtf8());
+    }
+    else if (command == "ADMIN_BLOCK_USER") {
+        if (tokens.size() < 2) return;
+        QString login = tokens.at(1);
+        QSqlQuery query;
+        query.prepare("UPDATE users SET role = 'blocked' WHERE login = :login");
+        query.bindValue(":login", login);
+        if (query.exec()) {
+            socket->write("ADMIN_BLOCK_USER;SUCCESS\r\n");
+            DatabaseManager::getInstance()->logError(QString("User blocked: %1").arg(login));
+        } else {
+            socket->write("ADMIN_BLOCK_USER;FAILED\r\n");
+        }
+    }
+    else if (command == "ADMIN_DELETE_USER") {
+        if (tokens.size() < 2) return;
+        QString login = tokens.at(1);
+        QSqlQuery query;
+        query.prepare("DELETE FROM users WHERE login = :login");
+        query.bindValue(":login", login);
+        if (query.exec()) {
+            socket->write("ADMIN_DELETE_USER;SUCCESS\r\n");
+            DatabaseManager::getInstance()->logError(QString("User deleted: %1").arg(login));
+        } else {
+            socket->write("ADMIN_DELETE_USER;FAILED\r\n");
+        }
     }
     // 4. ВЫЧИСЛЕНИЯ (Пример интеграции сохранения результатов алгоритмов)
     else if (command == "CALC_GRAD") {

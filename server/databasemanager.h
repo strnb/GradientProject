@@ -48,6 +48,9 @@ public:
     QString getErrors();
     QString getAlgorithmHistory();
     QString getTestResults();
+
+    bool    logAction(const QString& login, const QString& actionType, const QString& description);
+    QString getLogsForAdmin();
 };
 
 #endif // DATABASEMANAGER_H
