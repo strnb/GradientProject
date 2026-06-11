@@ -49,8 +49,8 @@ void AdminWindow::setupUi()
     QWidget* usersTab = new QWidget();
     QVBoxLayout* usersLayout = new QVBoxLayout(usersTab);
 
-    m_usersTable = new QTableWidget(0, 4, this);
-    m_usersTable->setHorizontalHeaderLabels({"ID", "Логин", "Роль", "Дата регистрации"});
+    m_usersTable = new QTableWidget(0, 3, this);
+    m_usersTable->setHorizontalHeaderLabels({"ID", "Логин", "Роль" });
     m_usersTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     m_usersTable->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_usersTable->setEditTriggers(QAbstractItemView::NoEditTriggers);

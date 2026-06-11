@@ -102,18 +102,16 @@ void LoginWindow::onServerResponse(const QString& response)
 
         if (m_loginAsAdmin)
         {
-            // Кнопка "Войти как admin" → AdminWindow
             AdminWindow* window = new AdminWindow();
             window->show();
         }
         else
         {
-            // Кнопка "Войти как пользователь" → всегда UserWindow
             UserWindow* window = new UserWindow();
             window->show();
         }
 
-        this->close();
+        this->hide(); // было this->close()
     }
     else
     {

@@ -150,28 +150,59 @@ void MyTcpServer::parseRequest(QTcpSocket* socket, const QString& request) {
             socket->write("ADMIN_DELETE_USER;FAILED\r\n");
         }
     }
-    // 4. ВЫЧИСЛЕНИЯ (Пример интеграции сохранения результатов алгоритмов)
-    else if (command == "CALC_GRAD") {
-        if (tokens.size() < 5) return;
-        QString func = tokens.at(1);
-        QString start = tokens.at(2);
-        QString lr = tokens.at(3);
-        QString iter = tokens.at(4);
-
-        // Имитируем вычисление
-        double result = gradientDescent(func.toStdString(), start.toDouble(), lr.toDouble(), iter.toInt());
-        socket->write(QString("RESULT;%1\r\n").arg(result).toUtf8());
-
-        // Логируем действие пользователя и сохраняем в историю алгоритмов по ТЗ!
-        DatabaseManager::getInstance()->logUserAction(1, "Gradient Descent");
-        DatabaseManager::getInstance()->saveAlgorithmResult(1, "Gradient Descent", QString("Func:%1, Start:%2").arg(func, start), QString::number(result));
+    // 4. ВЫЧИСЛЕНИЯ — сохраняем результат в algorithm_history
+    else if (command == "CALC_SHA") {
+        if (tokens.size() < 2) return;
+        QString input = tokens.at(1);
+        std::string hash = hashPassword(input.toStdString());
+        QString result = QString::fromStdString(hash);
+        socket->write(QString("RESULT_SHA;%1\r\n").arg(result).toUtf8());
+        DatabaseManager::getInstance()->saveAlgorithmResult(
+            QVariant(), "SHA-256", input, result);
+    }
+    else if (command == "CALC_VIGENERE_ENCRYPT") {
+        if (tokens.size() < 3) return;
+        QString text = tokens.at(1);
+        QString key  = tokens.at(2);
+        // Результат вернём клиенту — клиент считал локально, сервер логирует
+        DatabaseManager::getInstance()->saveAlgorithmResult(
+            QVariant(), "Vigenere Encrypt",
+            QString("text=%1,key=%2").arg(text, key), "logged");
+        socket->write("RESULT_VIGENERE;OK\r\n");
+    }
+    else if (command == "CALC_VIGENERE_DECRYPT") {
+        if (tokens.size() < 3) return;
+        QString text = tokens.at(1);
+        QString key  = tokens.at(2);
+        DatabaseManager::getInstance()->saveAlgorithmResult(
+            QVariant(), "Vigenere Decrypt",
+            QString("text=%1,key=%2").arg(text, key), "logged");
+        socket->write("RESULT_VIGENERE;OK\r\n");
     }
     else if (command == "CALC_SPLINE") {
-        double result = splineInterpolate({ 1,2 }, { 3,4 }, 2.5);
-        socket->write(QString("RESULT;%1\r\n").arg(result).toUtf8());
-
-        DatabaseManager::getInstance()->logUserAction(1, "Spline Calculation");
-        DatabaseManager::getInstance()->saveAlgorithmResult(1, "Splines", "X:[1,2] Y:[3,4]", QString::number(result));
+        if (tokens.size() < 4) return;
+        QString xData  = tokens.at(1);
+        QString yData  = tokens.at(2);
+        QString query  = tokens.at(3);
+        double result = splineInterpolate({1,2}, {3,4}, 2.5); // заглушка
+        socket->write(QString("RESULT_SPLINE;%1\r\n").arg(result).toUtf8());
+        DatabaseManager::getInstance()->saveAlgorithmResult(
+            QVariant(), "Spline",
+            QString("x=%1,y=%2,q=%3").arg(xData, yData, query),
+            QString::number(result));
+    }
+    else if (command == "CALC_GRAD") {
+        if (tokens.size() < 5) return;
+        QString func  = tokens.at(1);
+        QString start = tokens.at(2);
+        QString lr    = tokens.at(3);
+        QString iter  = tokens.at(4);
+        double result = gradientDescent(func.toStdString(), start.toDouble(), lr.toDouble(), iter.toInt());
+        socket->write(QString("RESULT_GRAD;%1\r\n").arg(result).toUtf8());
+        DatabaseManager::getInstance()->saveAlgorithmResult(
+            QVariant(), "Gradient Descent",
+            QString("func=%1,start=%2,lr=%3,iter=%4").arg(func,start,lr,iter),
+            QString::number(result));
     }
     else {
         socket->write("ERROR;UNKNOWN_COMMAND\r\n");

@@ -126,14 +126,13 @@ QString DatabaseManager::getLogsForAdmin() {
 
 // Формат: "id,login,role,created_at|id,login,role,created_at|..."
 QString DatabaseManager::getUsers() {
-    QSqlQuery query("SELECT id, login, role, created_at FROM users ORDER BY id");
+    QSqlQuery query("SELECT id, login, role FROM users ORDER BY id");
     QStringList rows;
     while (query.next()) {
-        rows << QString("%1,%2,%3,%4")
+        rows << QString("%1,%2,%3")
                 .arg(query.value(0).toString(),
                      query.value(1).toString(),
-                     query.value(2).toString(),
-                     query.value(3).toString());
+                     query.value(2).toString());
     }
     return rows.isEmpty() ? "EMPTY" : rows.join("|");
 }

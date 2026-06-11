@@ -2,7 +2,7 @@
 #include "ui_shawindow.h"
 
 #include "userwindow.h"
-
+#include "networkmanager.h"
 #include "../shared/crypto_utils.h"
 
 #include <QPushButton>
@@ -15,79 +15,59 @@ ShaWindow::ShaWindow(QWidget *parent)
     ui->setupUi(this);
 
     // GENERATE SHA-256
-
     connect(
         ui->generateButton,
         &QPushButton::clicked,
         this,
         [this]()
         {
-            QString text =
-                ui->inputEdit->text();
+            QString text = ui->inputEdit->text();
+            if (text.isEmpty()) return;
 
-            std::string hash =
-                hashPassword(
-                    text.toStdString()
-                );
+            // Считаем локально
+            std::string hash = hashPassword(text.toStdString());
+            QString result = QString::fromStdString(hash);
+            ui->resultEdit->setText(result);
 
-            ui->resultEdit->setText(
-                QString::fromStdString(hash)
+            // Логируем на сервер
+            NetworkManager::getInstance()->sendRequest(
+                QString("CALC_SHA;%1").arg(text)
             );
         }
     );
 
     // VERIFY HASH
-
     connect(
         ui->verifyButton,
         &QPushButton::clicked,
         this,
         [this]()
         {
-            QString text =
-                ui->verifyTextEdit->text();
+            QString text = ui->verifyTextEdit->text();
+            QString hash = ui->verifyHashEdit->text();
 
-            QString hash =
-                ui->verifyHashEdit->text();
+            std::string generatedHash = hashPassword(text.toStdString());
 
-            std::string generatedHash =
-                hashPassword(
-                    text.toStdString()
-                );
-
-            if (generatedHash ==
-                hash.toStdString())
+            if (generatedHash == hash.toStdString())
             {
-                QMessageBox::information(
-                    this,
-                    "Success",
-                    "Hash matches"
-                );
+                QMessageBox::information(this, "Успех", "Хэш совпадает");
             }
             else
             {
-                QMessageBox::warning(
-                    this,
-                    "Error",
-                    "Hash does not match"
-                );
+                QMessageBox::warning(this, "Ошибка", "Хэш не совпадает");
             }
         }
     );
 
     // BACK BUTTON
-
     connect(
         ui->backButton,
         &QPushButton::clicked,
         this,
         [this]()
         {
-            UserWindow* window =
-                new UserWindow();
-
+            UserWindow* window = new UserWindow();
             window->show();
-
             this->close();
         }
     );
