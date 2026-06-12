@@ -1,6 +1,7 @@
 #include "splinewindow.h"
 #include "ui_splinewindow.h"
 #include "userwindow.h"
+#include "networkmanager.h"
 
 #include "../shared/spline.h"
 
@@ -13,89 +14,43 @@ SplineWindow::SplineWindow(QWidget* parent)
 {
     ui->setupUi(this);
 
-    connect(
-        ui->calculateButton,
-        &QPushButton::clicked,
-        this,
-        [this]()
-        {
-            QString xText =
-                ui->xEdit->text();
+    connect(ui->calculateButton, &QPushButton::clicked, this, [this]() {
+        QString xText    = ui->xEdit->text();
+        QString yText    = ui->yEdit->text();
+        QString queryText = ui->queryEdit->text();
 
-            QString yText =
-                ui->yEdit->text();
+        QStringList xList = xText.split(" ", Qt::SkipEmptyParts);
+        QStringList yList = yText.split(" ", Qt::SkipEmptyParts);
 
-            QString queryText =
-                ui->queryEdit->text();
+        std::vector<double> x, y;
+        for (const QString& v : xList) x.push_back(v.toDouble());
+        for (const QString& v : yList) y.push_back(v.toDouble());
 
-            QStringList xList =
-                xText.split(" ");
-
-            QStringList yList =
-                yText.split(" ");
-
-            std::vector<double> x;
-            std::vector<double> y;
-
-            for (const QString& value : xList)
-            {
-                x.push_back(value.toDouble());
-            }
-
-            for (const QString& value : yList)
-            {
-                y.push_back(value.toDouble());
-            }
-
-            if (x.size() != y.size())
-            {
-                QMessageBox::warning(
-                    this,
-                    "Error",
-                    "X and Y size mismatch"
-                );
-
-                return;
-            }
-
-            double query =
-                queryText.toDouble();
-
-            double result =
-                splineInterpolate(
-                    x,
-                    y,
-                    query
-                );
-
-            auto graph =
-                findChild<SplineGraphWidget*>("graphWidget");
-
-            if (graph)
-            {
-                graph->setData(
-                    x,
-                    y
-                );
-            }
-
-            ui->resultLabel->setText(
-                QString::number(result)
-            );
+        if (x.size() != y.size()) {
+            QMessageBox::warning(this, "Error", "X and Y size mismatch");
+            return;
         }
-    );
 
-    connect(
-        ui->backButton,
-        &QPushButton::clicked,
-        this,
-        [this]()
-        {
-            auto* menu = new UserWindow();
-            menu->show();
-            this->close();
-        }
-    );
+        double query  = queryText.toDouble();
+        double result = splineInterpolate(x, y, query);
+
+        auto graph = findChild<SplineGraphWidget*>("graphWidget");
+        if (graph) graph->setData(x, y);
+
+        ui->resultLabel->setText(QString::number(result));
+
+        // Логируем на сервер
+        NetworkManager::getInstance()->sendRequest(
+            QString("CALC_SPLINE;%1;%2;%3")
+                .arg(xText, yText, queryText)
+        );
+    });
+
+    connect(ui->backButton, &QPushButton::clicked, this, [this]() {
+        auto* menu = new UserWindow();
+        menu->show();
+        this->close();
+    });
 }
 
 SplineWindow::~SplineWindow()

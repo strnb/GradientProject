@@ -191,6 +191,17 @@ void MyTcpServer::parseRequest(QTcpSocket* socket, const QString& request) {
             QString("x=%1,y=%2,q=%3").arg(xData, yData, query),
             QString::number(result));
     }
+    else if (command == "CALC_MSE") {
+        if (tokens.size() < 4) return;
+        QString xData  = tokens.at(1);
+        QString yData  = tokens.at(2);
+        QString result = tokens.at(3);
+        socket->write("RESULT_MSE;OK\r\n");
+        DatabaseManager::getInstance()->saveAlgorithmResult(
+            QVariant(), "MSE",
+            QString("x=%1,y=%2").arg(xData, yData),
+            result);
+    }
     else if (command == "CALC_GRAD") {
         if (tokens.size() < 5) return;
         QString func  = tokens.at(1);
