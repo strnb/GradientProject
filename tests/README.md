@@ -14,16 +14,15 @@ tests/
 └── test_spline.cpp     ← splineInterpolate
 ```
 
-## Быстрый старт
+## Cтарт тестов
 
 ```bash
 # Из корня репозитория
 cd tests
 cmake -B build -S .
-cmake --build build -j$(nproc)
-
-# Запустить все тесты
-cd build && ctest --output-on-failure
+cmake --build build
+cd build
+ctest -C Debug --output-on-failure
 ```
 
 Или запустить отдельный исполняемый файл с подробным выводом:
