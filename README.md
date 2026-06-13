@@ -40,7 +40,7 @@
 * **Database:** PostgreSQL
 * **DevOps:** Docker, Docker-compose
 * **Documentation:** Doxygen, GitHub Wiki
-* **Testing:** PyTest / Unit-tests
+* **Testing:** Unit-tests
 
 ---
 
@@ -48,16 +48,19 @@
 
 Соблюдается стандартная структура веток:
 * `main` — стабильная версия.
-* `develop` — основная ветка разработки.
-* `feature/crypto` — разработка алгоритмов шифрования.
-* `feature/math` — реализация математических методов.
+* `feature/develop` — основная ветка разработки.
+* `alghoritm` — разработка алгоритмов шифрования.
 
 ### Схема каталогов:
 ```text
 .
-├── src/                # Исходный код (Client/Server)
-├── docs/               # Документация (Doxygen, схемы)
-├── tests/              # Модульные тесты
-├── docker/             # Конфигурации Docker
-├── requirements.txt    # Зависимости
+├── client/
+├── docker/
+├── docs/
+├── scripts/
+├── server/
+├── shared/
+├── tests/
+├── .gitignore
+├── CMakeLists.txt
 └── README.md
