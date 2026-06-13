@@ -1,0 +1,749 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gradient Project: Класс AdminWindow</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gradient Project<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Клиент-серверное приложение для численных методов</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_admin_window.html','','class_admin_window-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс AdminWindow</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Главное окно панели администратора  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_adminwindow_8h_source.html">Adminwindow.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:AdminWindow:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_admin_window__inherit__graph.png" border="0" usemap="#a_admin_window_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<!-- MAP 0 -->
+</div>
+<div class="dynheader">
+Граф связей класса AdminWindow:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_admin_window__coll__graph.png" border="0" usemap="#a_admin_window_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a0a68db6e97108a5b789d7b90dd962f76" id="r_a0a68db6e97108a5b789d7b90dd962f76"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0a68db6e97108a5b789d7b90dd962f76">AdminWindow</a> (<a class="el" href="class_q_widget.html">QWidget</a> *parent=nullptr)</td></tr>
+<tr class="memdesc:a0a68db6e97108a5b789d7b90dd962f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор окна администратора  <br /></td></tr>
+<tr class="memitem:aa333148a1f36bc5c5eb8cd9db06ffbfe" id="r_aa333148a1f36bc5c5eb8cd9db06ffbfe"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa333148a1f36bc5c5eb8cd9db06ffbfe">~AdminWindow</a> ()=default</td></tr>
+<tr class="memdesc:aa333148a1f36bc5c5eb8cd9db06ffbfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор по умолчанию  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:ad6d94913d15c11653d4a5d1fe0a0a40d" id="r_ad6d94913d15c11653d4a5d1fe0a0a40d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad6d94913d15c11653d4a5d1fe0a0a40d">onServerResponse</a> (const QString &amp;response)</td></tr>
+<tr class="memdesc:ad6d94913d15c11653d4a5d1fe0a0a40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик ответа от сервера  <br /></td></tr>
+<tr class="memitem:a8658f42b55ddc872e303789e4e8ecd96" id="r_a8658f42b55ddc872e303789e4e8ecd96"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8658f42b55ddc872e303789e4e8ecd96">onRefreshUsers</a> ()</td></tr>
+<tr class="memdesc:a8658f42b55ddc872e303789e4e8ecd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновить список пользователей  <br /></td></tr>
+<tr class="memitem:a5ee0ba4465769146839c274414d618f5" id="r_a5ee0ba4465769146839c274414d618f5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5ee0ba4465769146839c274414d618f5">onRefreshHistory</a> ()</td></tr>
+<tr class="memdesc:a5ee0ba4465769146839c274414d618f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновить историю запросов  <br /></td></tr>
+<tr class="memitem:aaeaebf84737116c44bd292472ac8c5e6" id="r_aaeaebf84737116c44bd292472ac8c5e6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaeaebf84737116c44bd292472ac8c5e6">onRefreshLogs</a> ()</td></tr>
+<tr class="memdesc:aaeaebf84737116c44bd292472ac8c5e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновить логи системы  <br /></td></tr>
+<tr class="memitem:afc26c2bd37597f4ca5da8ccff25cc39e" id="r_afc26c2bd37597f4ca5da8ccff25cc39e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afc26c2bd37597f4ca5da8ccff25cc39e">onBlockUser</a> ()</td></tr>
+<tr class="memdesc:afc26c2bd37597f4ca5da8ccff25cc39e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заблокировать выбранного пользователя  <br /></td></tr>
+<tr class="memitem:abf680108b6d81dcce9a8e294183e83c6" id="r_abf680108b6d81dcce9a8e294183e83c6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abf680108b6d81dcce9a8e294183e83c6">onDeleteUser</a> ()</td></tr>
+<tr class="memdesc:abf680108b6d81dcce9a8e294183e83c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить выбранного пользователя  <br /></td></tr>
+<tr class="memitem:a0b04de481dcd9e072b153cdfa1642d76" id="r_a0b04de481dcd9e072b153cdfa1642d76"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0b04de481dcd9e072b153cdfa1642d76">setupUi</a> ()</td></tr>
+<tr class="memdesc:a0b04de481dcd9e072b153cdfa1642d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка пользовательского интерфейса  <br /></td></tr>
+<tr class="memitem:ade583ed8aa300187f73a56b0b386533b" id="r_ade583ed8aa300187f73a56b0b386533b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ade583ed8aa300187f73a56b0b386533b">fillTable</a> (QTableWidget *table, const QString &amp;csvData)</td></tr>
+<tr class="memdesc:ade583ed8aa300187f73a56b0b386533b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполнить таблицу данными в формате CSV.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a0c4e051958e465a78f71edc5b6e12092" id="r_a0c4e051958e465a78f71edc5b6e12092"><td class="memItemLeft">QTabWidget *&#160;</td><td class="memItemRight"><a class="el" href="#a0c4e051958e465a78f71edc5b6e12092">m_tabs</a></td></tr>
+<tr class="memdesc:a0c4e051958e465a78f71edc5b6e12092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виджет с вкладками  <br /></td></tr>
+<tr class="memitem:ad2e5006d205141ca58e105ca9d891f79" id="r_ad2e5006d205141ca58e105ca9d891f79"><td class="memItemLeft">QTableWidget *&#160;</td><td class="memItemRight"><a class="el" href="#ad2e5006d205141ca58e105ca9d891f79">m_usersTable</a></td></tr>
+<tr class="memdesc:ad2e5006d205141ca58e105ca9d891f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таблица пользователей  <br /></td></tr>
+<tr class="memitem:af4a24564084c5e16f9167191a87ceaa7" id="r_af4a24564084c5e16f9167191a87ceaa7"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#af4a24564084c5e16f9167191a87ceaa7">m_blockButton</a></td></tr>
+<tr class="memdesc:af4a24564084c5e16f9167191a87ceaa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка блокировки пользователя  <br /></td></tr>
+<tr class="memitem:ad92e1fb1fb94ab30562eb484a1c631c1" id="r_ad92e1fb1fb94ab30562eb484a1c631c1"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#ad92e1fb1fb94ab30562eb484a1c631c1">m_deleteButton</a></td></tr>
+<tr class="memdesc:ad92e1fb1fb94ab30562eb484a1c631c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка удаления пользователя  <br /></td></tr>
+<tr class="memitem:aba456e9069bf14f1d02efe8c6a15880d" id="r_aba456e9069bf14f1d02efe8c6a15880d"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#aba456e9069bf14f1d02efe8c6a15880d">m_refreshUsersButton</a></td></tr>
+<tr class="memdesc:aba456e9069bf14f1d02efe8c6a15880d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка обновления списка пользователей  <br /></td></tr>
+<tr class="memitem:a40addcf030e42e1b1b7f199326cc6faa" id="r_a40addcf030e42e1b1b7f199326cc6faa"><td class="memItemLeft">QTableWidget *&#160;</td><td class="memItemRight"><a class="el" href="#a40addcf030e42e1b1b7f199326cc6faa">m_historyTable</a></td></tr>
+<tr class="memdesc:a40addcf030e42e1b1b7f199326cc6faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таблица истории запросов  <br /></td></tr>
+<tr class="memitem:a412260b0648281168f0a0a96de8b8808" id="r_a412260b0648281168f0a0a96de8b8808"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#a412260b0648281168f0a0a96de8b8808">m_refreshHistoryButton</a></td></tr>
+<tr class="memdesc:a412260b0648281168f0a0a96de8b8808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка обновления истории  <br /></td></tr>
+<tr class="memitem:a8a76e0f96a188ff076ac81170c408fb0" id="r_a8a76e0f96a188ff076ac81170c408fb0"><td class="memItemLeft">QTableWidget *&#160;</td><td class="memItemRight"><a class="el" href="#a8a76e0f96a188ff076ac81170c408fb0">m_logsTable</a></td></tr>
+<tr class="memdesc:a8a76e0f96a188ff076ac81170c408fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таблица логов  <br /></td></tr>
+<tr class="memitem:ac7897f9d70dc52e800ac5d52f89080cb" id="r_ac7897f9d70dc52e800ac5d52f89080cb"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#ac7897f9d70dc52e800ac5d52f89080cb">m_refreshLogsButton</a></td></tr>
+<tr class="memdesc:ac7897f9d70dc52e800ac5d52f89080cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка обновления логов  <br /></td></tr>
+<tr class="memitem:afa7b91e66d7c6e6fbaa94929890f3eca" id="r_afa7b91e66d7c6e6fbaa94929890f3eca"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#afa7b91e66d7c6e6fbaa94929890f3eca">m_pendingCommand</a></td></tr>
+<tr class="memdesc:afa7b91e66d7c6e6fbaa94929890f3eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Текущая ожидаемая команда для правильной обработки ответа  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Главное окно панели администратора </p>
+<p>Окно предоставляет администратору возможности управления пользователями, просмотра истории запросов и логов системы. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a0a68db6e97108a5b789d7b90dd962f76" name="a0a68db6e97108a5b789d7b90dd962f76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a68db6e97108a5b789d7b90dd962f76">&#9670;&#160;</a></span>AdminWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AdminWindow::AdminWindow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_widget.html">QWidget</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор окна администратора </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский виджет (по умолчанию nullptr) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa333148a1f36bc5c5eb8cd9db06ffbfe" name="aa333148a1f36bc5c5eb8cd9db06ffbfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa333148a1f36bc5c5eb8cd9db06ffbfe">&#9670;&#160;</a></span>~AdminWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AdminWindow::~AdminWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор по умолчанию </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ade583ed8aa300187f73a56b0b386533b" name="ade583ed8aa300187f73a56b0b386533b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade583ed8aa300187f73a56b0b386533b">&#9670;&#160;</a></span>fillTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminWindow::fillTable </td>
+          <td>(</td>
+          <td class="paramtype">QTableWidget *</td>          <td class="paramname"><span class="paramname"><em>table</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>csvData</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполнить таблицу данными в формате CSV. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>Указатель на таблицу для заполнения </td></tr>
+    <tr><td class="paramname">csvData</td><td>Данные в формате CSV </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afc26c2bd37597f4ca5da8ccff25cc39e" name="afc26c2bd37597f4ca5da8ccff25cc39e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc26c2bd37597f4ca5da8ccff25cc39e">&#9670;&#160;</a></span>onBlockUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminWindow::onBlockUser </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заблокировать выбранного пользователя </p>
+
+</div>
+</div>
+<a id="abf680108b6d81dcce9a8e294183e83c6" name="abf680108b6d81dcce9a8e294183e83c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf680108b6d81dcce9a8e294183e83c6">&#9670;&#160;</a></span>onDeleteUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminWindow::onDeleteUser </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить выбранного пользователя </p>
+
+</div>
+</div>
+<a id="a5ee0ba4465769146839c274414d618f5" name="a5ee0ba4465769146839c274414d618f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee0ba4465769146839c274414d618f5">&#9670;&#160;</a></span>onRefreshHistory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminWindow::onRefreshHistory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновить историю запросов </p>
+
+</div>
+</div>
+<a id="aaeaebf84737116c44bd292472ac8c5e6" name="aaeaebf84737116c44bd292472ac8c5e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeaebf84737116c44bd292472ac8c5e6">&#9670;&#160;</a></span>onRefreshLogs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminWindow::onRefreshLogs </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновить логи системы </p>
+
+</div>
+</div>
+<a id="a8658f42b55ddc872e303789e4e8ecd96" name="a8658f42b55ddc872e303789e4e8ecd96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8658f42b55ddc872e303789e4e8ecd96">&#9670;&#160;</a></span>onRefreshUsers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminWindow::onRefreshUsers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновить список пользователей </p>
+
+</div>
+</div>
+<a id="ad6d94913d15c11653d4a5d1fe0a0a40d" name="ad6d94913d15c11653d4a5d1fe0a0a40d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d94913d15c11653d4a5d1fe0a0a40d">&#9670;&#160;</a></span>onServerResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminWindow::onServerResponse </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>response</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик ответа от сервера </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>Ответ сервера в виде строки </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0b04de481dcd9e072b153cdfa1642d76" name="a0b04de481dcd9e072b153cdfa1642d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b04de481dcd9e072b153cdfa1642d76">&#9670;&#160;</a></span>setupUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminWindow::setupUi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настройка пользовательского интерфейса </p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="af4a24564084c5e16f9167191a87ceaa7" name="af4a24564084c5e16f9167191a87ceaa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a24564084c5e16f9167191a87ceaa7">&#9670;&#160;</a></span>m_blockButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AdminWindow::m_blockButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка блокировки пользователя </p>
+
+</div>
+</div>
+<a id="ad92e1fb1fb94ab30562eb484a1c631c1" name="ad92e1fb1fb94ab30562eb484a1c631c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad92e1fb1fb94ab30562eb484a1c631c1">&#9670;&#160;</a></span>m_deleteButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AdminWindow::m_deleteButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка удаления пользователя </p>
+
+</div>
+</div>
+<a id="a40addcf030e42e1b1b7f199326cc6faa" name="a40addcf030e42e1b1b7f199326cc6faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40addcf030e42e1b1b7f199326cc6faa">&#9670;&#160;</a></span>m_historyTable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTableWidget* AdminWindow::m_historyTable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Таблица истории запросов </p>
+
+</div>
+</div>
+<a id="a8a76e0f96a188ff076ac81170c408fb0" name="a8a76e0f96a188ff076ac81170c408fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a76e0f96a188ff076ac81170c408fb0">&#9670;&#160;</a></span>m_logsTable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTableWidget* AdminWindow::m_logsTable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Таблица логов </p>
+
+</div>
+</div>
+<a id="afa7b91e66d7c6e6fbaa94929890f3eca" name="afa7b91e66d7c6e6fbaa94929890f3eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7b91e66d7c6e6fbaa94929890f3eca">&#9670;&#160;</a></span>m_pendingCommand</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString AdminWindow::m_pendingCommand</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Текущая ожидаемая команда для правильной обработки ответа </p>
+
+</div>
+</div>
+<a id="a412260b0648281168f0a0a96de8b8808" name="a412260b0648281168f0a0a96de8b8808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412260b0648281168f0a0a96de8b8808">&#9670;&#160;</a></span>m_refreshHistoryButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AdminWindow::m_refreshHistoryButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка обновления истории </p>
+
+</div>
+</div>
+<a id="ac7897f9d70dc52e800ac5d52f89080cb" name="ac7897f9d70dc52e800ac5d52f89080cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7897f9d70dc52e800ac5d52f89080cb">&#9670;&#160;</a></span>m_refreshLogsButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AdminWindow::m_refreshLogsButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка обновления логов </p>
+
+</div>
+</div>
+<a id="aba456e9069bf14f1d02efe8c6a15880d" name="aba456e9069bf14f1d02efe8c6a15880d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba456e9069bf14f1d02efe8c6a15880d">&#9670;&#160;</a></span>m_refreshUsersButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AdminWindow::m_refreshUsersButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка обновления списка пользователей </p>
+
+</div>
+</div>
+<a id="a0c4e051958e465a78f71edc5b6e12092" name="a0c4e051958e465a78f71edc5b6e12092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c4e051958e465a78f71edc5b6e12092">&#9670;&#160;</a></span>m_tabs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTabWidget* AdminWindow::m_tabs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Виджет с вкладками </p>
+
+</div>
+</div>
+<a id="ad2e5006d205141ca58e105ca9d891f79" name="ad2e5006d205141ca58e105ca9d891f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2e5006d205141ca58e105ca9d891f79">&#9670;&#160;</a></span>m_usersTable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTableWidget* AdminWindow::m_usersTable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Таблица пользователей </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="_adminwindow_8h_source.html">Adminwindow.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_admin_window.html">AdminWindow</a></li>
+    <li class="footer">Документация по Gradient Project. Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

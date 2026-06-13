@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gradient Project: Исходный файл Networkmanager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gradient Project<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Клиент-серверное приложение для численных методов</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_networkmanager_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Networkmanager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_networkmanager_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef NETWORKMANAGER_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define NETWORKMANAGER_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QTcpSocket&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_network_manager.html">   21</a></span><span class="keyword">class </span><a class="code hl_function" href="class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855">NetworkManager</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_q_object.html">QObject</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Q_OBJECT</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_network_manager.html#aff2a16fdaafaedc2a48899776b8fd9c5">   30</a></span>    <span class="keyword">static</span> <a class="code hl_function" href="class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855">NetworkManager</a>* <a class="code hl_function" href="class_network_manager.html#aff2a16fdaafaedc2a48899776b8fd9c5">getInstance</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_network_manager.html#a7285f908c20d2aac166628681bf39d50">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#a7285f908c20d2aac166628681bf39d50">connectToServer</a>(<span class="keyword">const</span> QString&amp; host = <span class="stringliteral">&quot;127.0.0.1&quot;</span>, quint16 port = 33333);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_network_manager.html#a960d199d4d1a93192f1ba284d51a78ab">   43</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#a960d199d4d1a93192f1ba284d51a78ab">sendRequest</a>(<span class="keyword">const</span> QString&amp; request);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_network_manager.html#a75675e4911d4d15a5dd3f10b9ce8d871">   49</a></span>    QString <a class="code hl_function" href="class_network_manager.html#a75675e4911d4d15a5dd3f10b9ce8d871">role</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_network_manager.html#a51ad29c864d04930bcce140f931d7336">   55</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#a51ad29c864d04930bcce140f931d7336">setRole</a>(<span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_network_manager.html#a75675e4911d4d15a5dd3f10b9ce8d871">role</a>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_network_manager.html#a0a49c2595f5f9bb8b6aee55225c1195b">   61</a></span>    QString <a class="code hl_function" href="class_network_manager.html#a0a49c2595f5f9bb8b6aee55225c1195b">login</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_network_manager.html#aaa66d7c30fd48203af95d655afaea09f">   67</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#aaa66d7c30fd48203af95d655afaea09f">setLogin</a>(<span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_network_manager.html#a0a49c2595f5f9bb8b6aee55225c1195b">login</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_network_manager.html#a607eeec4739fb1ac77b6f0cd1faeacac">   73</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_network_manager.html#a97d1fb741f609c2442efdfd92e944ed2">isConnected</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>signals:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> responseReceived(<span class="keyword">const</span> QString&amp; response);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_network_manager.html#aa2d7233230f2d609c31d9fd064c2f461">   83</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#aa2d7233230f2d609c31d9fd064c2f461">connected</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_network_manager.html#a3c9d18963e77a155faf338b86927e2e5">   86</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#a3c9d18963e77a155faf338b86927e2e5">disconnected</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_network_manager.html#a8c95ebaf4720e37c5dfbe3433970c209">   90</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#a8c95ebaf4720e37c5dfbe3433970c209">onReadyRead</a>();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_network_manager.html#a58117c282e533ceff2ebab1a6d459699">   93</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#a58117c282e533ceff2ebab1a6d459699">onConnected</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_network_manager.html#a0028518c2761defad4d923b42493463b">   96</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#a0028518c2761defad4d923b42493463b">onDisconnected</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_network_manager.html#a48cb237f8e18e0c00a7c808dcb901b42">  102</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_network_manager.html#a48cb237f8e18e0c00a7c808dcb901b42">onErrorOccurred</a>(QAbstractSocket::SocketError error);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855">  109</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855">NetworkManager</a>(<a class="code hl_class" href="class_q_object.html">QObject</a>* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_network_manager.html#a93d8a0983d0906583eb4b7917bef15ec">  112</a></span>    <a class="code hl_function" href="class_network_manager.html#a93d8a0983d0906583eb4b7917bef15ec">~NetworkManager</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="comment">// Запрет копирования (синглтон)</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_network_manager.html#a3730b9faf9be4d7233016cae02a3c6dd">  115</a></span>    <a class="code hl_function" href="class_network_manager.html#a3730b9faf9be4d7233016cae02a3c6dd">NetworkManager</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855">NetworkManager</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_network_manager.html#ad781d69ece28da9721fb1b522676716c">  116</a></span>    <a class="code hl_function" href="class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855">NetworkManager</a>&amp; <a class="code hl_function" href="class_network_manager.html#ad781d69ece28da9721fb1b522676716c">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855">NetworkManager</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_network_manager.html#ad2668492e4ab0622c99b8f8b4dbfd4a6">  118</a></span>    <span class="keyword">static</span> <a class="code hl_function" href="class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855">NetworkManager</a>* <a class="code hl_variable" href="class_network_manager.html#ad2668492e4ab0622c99b8f8b4dbfd4a6">p_instance</a>; </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_network_manager.html#abd13bcb5398c31f8bd0cc167c6b32df8">  120</a></span>    QTcpSocket* <a class="code hl_variable" href="class_network_manager.html#abd13bcb5398c31f8bd0cc167c6b32df8">m_socket</a>;   </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_network_manager.html#afbcb32fa40f8593ffc31f277514dac97">  121</a></span>    QString     <a class="code hl_variable" href="class_network_manager.html#afbcb32fa40f8593ffc31f277514dac97">m_role</a>;     </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_network_manager.html#aca79465ab8124fa07a5dffe6718b870c">  122</a></span>    QString     <a class="code hl_variable" href="class_network_manager.html#aca79465ab8124fa07a5dffe6718b870c">m_login</a>;    </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_network_manager.html#a60ec3c0ff9a94a2027492186390be60a">  123</a></span>    QString     <a class="code hl_variable" href="class_network_manager.html#a60ec3c0ff9a94a2027492186390be60a">m_buffer</a>;   </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#endif </span><span class="comment">// NETWORKMANAGER_H</span></div>
+<div class="ttc" id="aclass_network_manager_html_a0028518c2761defad4d923b42493463b"><div class="ttname"><a href="class_network_manager.html#a0028518c2761defad4d923b42493463b">NetworkManager::onDisconnected</a></div><div class="ttdeci">void onDisconnected()</div><div class="ttdoc">Обработчик отключения</div></div>
+<div class="ttc" id="aclass_network_manager_html_a0a49c2595f5f9bb8b6aee55225c1195b"><div class="ttname"><a href="class_network_manager.html#a0a49c2595f5f9bb8b6aee55225c1195b">NetworkManager::login</a></div><div class="ttdeci">QString login() const</div><div class="ttdoc">Получить логин текущего пользователя</div></div>
+<div class="ttc" id="aclass_network_manager_html_a25e5a69c0dba31cc028050c2b6eea855"><div class="ttname"><a href="class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855">NetworkManager::NetworkManager</a></div><div class="ttdeci">NetworkManager(QObject *parent=nullptr)</div><div class="ttdoc">Приватный конструктор (синглтон).</div></div>
+<div class="ttc" id="aclass_network_manager_html_a3730b9faf9be4d7233016cae02a3c6dd"><div class="ttname"><a href="class_network_manager.html#a3730b9faf9be4d7233016cae02a3c6dd">NetworkManager::NetworkManager</a></div><div class="ttdeci">NetworkManager(const NetworkManager &amp;)=delete</div></div>
+<div class="ttc" id="aclass_network_manager_html_a3c9d18963e77a155faf338b86927e2e5"><div class="ttname"><a href="class_network_manager.html#a3c9d18963e77a155faf338b86927e2e5">NetworkManager::disconnected</a></div><div class="ttdeci">void disconnected()</div><div class="ttdoc">Сигнал о разрыве соединения</div></div>
+<div class="ttc" id="aclass_network_manager_html_a48cb237f8e18e0c00a7c808dcb901b42"><div class="ttname"><a href="class_network_manager.html#a48cb237f8e18e0c00a7c808dcb901b42">NetworkManager::onErrorOccurred</a></div><div class="ttdeci">void onErrorOccurred(QAbstractSocket::SocketError error)</div><div class="ttdoc">Обработчик ошибки сокета</div></div>
+<div class="ttc" id="aclass_network_manager_html_a51ad29c864d04930bcce140f931d7336"><div class="ttname"><a href="class_network_manager.html#a51ad29c864d04930bcce140f931d7336">NetworkManager::setRole</a></div><div class="ttdeci">void setRole(const QString &amp;role)</div><div class="ttdoc">Установить роль текущего пользователя</div></div>
+<div class="ttc" id="aclass_network_manager_html_a58117c282e533ceff2ebab1a6d459699"><div class="ttname"><a href="class_network_manager.html#a58117c282e533ceff2ebab1a6d459699">NetworkManager::onConnected</a></div><div class="ttdeci">void onConnected()</div><div class="ttdoc">Обработчик успешного подключения</div></div>
+<div class="ttc" id="aclass_network_manager_html_a60ec3c0ff9a94a2027492186390be60a"><div class="ttname"><a href="class_network_manager.html#a60ec3c0ff9a94a2027492186390be60a">NetworkManager::m_buffer</a></div><div class="ttdeci">QString m_buffer</div><div class="ttdoc">Буфер для склейки частичных пакетов</div><div class="ttdef"><b>Определения</b> Networkmanager.h:123</div></div>
+<div class="ttc" id="aclass_network_manager_html_a7285f908c20d2aac166628681bf39d50"><div class="ttname"><a href="class_network_manager.html#a7285f908c20d2aac166628681bf39d50">NetworkManager::connectToServer</a></div><div class="ttdeci">void connectToServer(const QString &amp;host=&quot;127.0.0.1&quot;, quint16 port=33333)</div><div class="ttdoc">Подключиться к серверу</div></div>
+<div class="ttc" id="aclass_network_manager_html_a75675e4911d4d15a5dd3f10b9ce8d871"><div class="ttname"><a href="class_network_manager.html#a75675e4911d4d15a5dd3f10b9ce8d871">NetworkManager::role</a></div><div class="ttdeci">QString role() const</div><div class="ttdoc">Получить роль текущего пользователя</div></div>
+<div class="ttc" id="aclass_network_manager_html_a8c95ebaf4720e37c5dfbe3433970c209"><div class="ttname"><a href="class_network_manager.html#a8c95ebaf4720e37c5dfbe3433970c209">NetworkManager::onReadyRead</a></div><div class="ttdeci">void onReadyRead()</div><div class="ttdoc">Обработчик готовности данных для чтения</div></div>
+<div class="ttc" id="aclass_network_manager_html_a93d8a0983d0906583eb4b7917bef15ec"><div class="ttname"><a href="class_network_manager.html#a93d8a0983d0906583eb4b7917bef15ec">NetworkManager::~NetworkManager</a></div><div class="ttdeci">~NetworkManager()=default</div><div class="ttdoc">Деструктор по умолчанию</div></div>
+<div class="ttc" id="aclass_network_manager_html_a960d199d4d1a93192f1ba284d51a78ab"><div class="ttname"><a href="class_network_manager.html#a960d199d4d1a93192f1ba284d51a78ab">NetworkManager::sendRequest</a></div><div class="ttdeci">void sendRequest(const QString &amp;request)</div><div class="ttdoc">Отправить запрос на сервер</div></div>
+<div class="ttc" id="aclass_network_manager_html_a97d1fb741f609c2442efdfd92e944ed2"><div class="ttname"><a href="class_network_manager.html#a97d1fb741f609c2442efdfd92e944ed2">NetworkManager::isConnected</a></div><div class="ttdeci">bool isConnected() const</div><div class="ttdoc">Проверить состояние подключения</div></div>
+<div class="ttc" id="aclass_network_manager_html_aa2d7233230f2d609c31d9fd064c2f461"><div class="ttname"><a href="class_network_manager.html#aa2d7233230f2d609c31d9fd064c2f461">NetworkManager::connected</a></div><div class="ttdeci">void connected()</div><div class="ttdoc">Сигнал об успешном установлении соединения</div></div>
+<div class="ttc" id="aclass_network_manager_html_aaa66d7c30fd48203af95d655afaea09f"><div class="ttname"><a href="class_network_manager.html#aaa66d7c30fd48203af95d655afaea09f">NetworkManager::setLogin</a></div><div class="ttdeci">void setLogin(const QString &amp;login)</div><div class="ttdoc">Установить логин текущего пользователя</div></div>
+<div class="ttc" id="aclass_network_manager_html_abd13bcb5398c31f8bd0cc167c6b32df8"><div class="ttname"><a href="class_network_manager.html#abd13bcb5398c31f8bd0cc167c6b32df8">NetworkManager::m_socket</a></div><div class="ttdeci">QTcpSocket * m_socket</div><div class="ttdoc">TCP-сокет для соединения с сервером</div><div class="ttdef"><b>Определения</b> Networkmanager.h:120</div></div>
+<div class="ttc" id="aclass_network_manager_html_aca79465ab8124fa07a5dffe6718b870c"><div class="ttname"><a href="class_network_manager.html#aca79465ab8124fa07a5dffe6718b870c">NetworkManager::m_login</a></div><div class="ttdeci">QString m_login</div><div class="ttdoc">Логин текущего пользователя</div><div class="ttdef"><b>Определения</b> Networkmanager.h:122</div></div>
+<div class="ttc" id="aclass_network_manager_html_ad2668492e4ab0622c99b8f8b4dbfd4a6"><div class="ttname"><a href="class_network_manager.html#ad2668492e4ab0622c99b8f8b4dbfd4a6">NetworkManager::p_instance</a></div><div class="ttdeci">static NetworkManager * p_instance</div><div class="ttdoc">Указатель на единственный экземпляр</div><div class="ttdef"><b>Определения</b> Networkmanager.h:118</div></div>
+<div class="ttc" id="aclass_network_manager_html_ad781d69ece28da9721fb1b522676716c"><div class="ttname"><a href="class_network_manager.html#ad781d69ece28da9721fb1b522676716c">NetworkManager::operator=</a></div><div class="ttdeci">NetworkManager &amp; operator=(const NetworkManager &amp;)=delete</div></div>
+<div class="ttc" id="aclass_network_manager_html_afbcb32fa40f8593ffc31f277514dac97"><div class="ttname"><a href="class_network_manager.html#afbcb32fa40f8593ffc31f277514dac97">NetworkManager::m_role</a></div><div class="ttdeci">QString m_role</div><div class="ttdoc">Роль текущего пользователя</div><div class="ttdef"><b>Определения</b> Networkmanager.h:121</div></div>
+<div class="ttc" id="aclass_network_manager_html_aff2a16fdaafaedc2a48899776b8fd9c5"><div class="ttname"><a href="class_network_manager.html#aff2a16fdaafaedc2a48899776b8fd9c5">NetworkManager::getInstance</a></div><div class="ttdeci">static NetworkManager * getInstance()</div><div class="ttdoc">Получить экземпляр синглтона</div></div>
+<div class="ttc" id="aclass_q_object_html"><div class="ttname"><a href="class_q_object.html">QObject</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="_networkmanager_8h.html">Networkmanager.h</a></li>
+    <li class="footer">Документация по Gradient Project. Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,819 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gradient Project: Класс NetworkManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gradient Project<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Клиент-серверное приложение для численных методов</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_network_manager.html','','class_network_manager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс NetworkManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Синглтон для управления TCP-соединением с сервером  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_networkmanager_8h_source.html">Networkmanager.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:NetworkManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_network_manager__inherit__graph.png" border="0" usemap="#a_network_manager_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<!-- MAP 0 -->
+</div>
+<div class="dynheader">
+Граф связей класса NetworkManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_network_manager__coll__graph.png" border="0" usemap="#a_network_manager_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a7285f908c20d2aac166628681bf39d50" id="r_a7285f908c20d2aac166628681bf39d50"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7285f908c20d2aac166628681bf39d50">connectToServer</a> (const QString &amp;host=&quot;127.0.0.1&quot;, quint16 port=33333)</td></tr>
+<tr class="memdesc:a7285f908c20d2aac166628681bf39d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подключиться к серверу  <br /></td></tr>
+<tr class="memitem:a960d199d4d1a93192f1ba284d51a78ab" id="r_a960d199d4d1a93192f1ba284d51a78ab"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a960d199d4d1a93192f1ba284d51a78ab">sendRequest</a> (const QString &amp;request)</td></tr>
+<tr class="memdesc:a960d199d4d1a93192f1ba284d51a78ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправить запрос на сервер  <br /></td></tr>
+<tr class="memitem:a75675e4911d4d15a5dd3f10b9ce8d871" id="r_a75675e4911d4d15a5dd3f10b9ce8d871"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a75675e4911d4d15a5dd3f10b9ce8d871">role</a> () const</td></tr>
+<tr class="memdesc:a75675e4911d4d15a5dd3f10b9ce8d871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить роль текущего пользователя  <br /></td></tr>
+<tr class="memitem:a51ad29c864d04930bcce140f931d7336" id="r_a51ad29c864d04930bcce140f931d7336"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a51ad29c864d04930bcce140f931d7336">setRole</a> (const QString &amp;role)</td></tr>
+<tr class="memdesc:a51ad29c864d04930bcce140f931d7336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установить роль текущего пользователя  <br /></td></tr>
+<tr class="memitem:a0a49c2595f5f9bb8b6aee55225c1195b" id="r_a0a49c2595f5f9bb8b6aee55225c1195b"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a0a49c2595f5f9bb8b6aee55225c1195b">login</a> () const</td></tr>
+<tr class="memdesc:a0a49c2595f5f9bb8b6aee55225c1195b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить логин текущего пользователя  <br /></td></tr>
+<tr class="memitem:aaa66d7c30fd48203af95d655afaea09f" id="r_aaa66d7c30fd48203af95d655afaea09f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaa66d7c30fd48203af95d655afaea09f">setLogin</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:aaa66d7c30fd48203af95d655afaea09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установить логин текущего пользователя  <br /></td></tr>
+<tr class="memitem:a97d1fb741f609c2442efdfd92e944ed2" id="r_a97d1fb741f609c2442efdfd92e944ed2"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a97d1fb741f609c2442efdfd92e944ed2">isConnected</a> () const</td></tr>
+<tr class="memdesc:a97d1fb741f609c2442efdfd92e944ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверить состояние подключения  <br /></td></tr>
+<tr class="memitem:aa2d7233230f2d609c31d9fd064c2f461" id="r_aa2d7233230f2d609c31d9fd064c2f461"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa2d7233230f2d609c31d9fd064c2f461">connected</a> ()</td></tr>
+<tr class="memdesc:aa2d7233230f2d609c31d9fd064c2f461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал об успешном установлении соединения  <br /></td></tr>
+<tr class="memitem:a3c9d18963e77a155faf338b86927e2e5" id="r_a3c9d18963e77a155faf338b86927e2e5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3c9d18963e77a155faf338b86927e2e5">disconnected</a> ()</td></tr>
+<tr class="memdesc:a3c9d18963e77a155faf338b86927e2e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал о разрыве соединения  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:aff2a16fdaafaedc2a48899776b8fd9c5" id="r_aff2a16fdaafaedc2a48899776b8fd9c5"><td class="memItemLeft">static <a class="el" href="class_network_manager.html">NetworkManager</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aff2a16fdaafaedc2a48899776b8fd9c5">getInstance</a> ()</td></tr>
+<tr class="memdesc:aff2a16fdaafaedc2a48899776b8fd9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить экземпляр синглтона  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a607eeec4739fb1ac77b6f0cd1faeacac" id="r_a607eeec4739fb1ac77b6f0cd1faeacac"><td class="memItemLeft">&#160;</td><td class="memItemRight">: void responseReceived(const QString&amp; response)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a8c95ebaf4720e37c5dfbe3433970c209" id="r_a8c95ebaf4720e37c5dfbe3433970c209"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8c95ebaf4720e37c5dfbe3433970c209">onReadyRead</a> ()</td></tr>
+<tr class="memdesc:a8c95ebaf4720e37c5dfbe3433970c209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик готовности данных для чтения  <br /></td></tr>
+<tr class="memitem:a58117c282e533ceff2ebab1a6d459699" id="r_a58117c282e533ceff2ebab1a6d459699"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a58117c282e533ceff2ebab1a6d459699">onConnected</a> ()</td></tr>
+<tr class="memdesc:a58117c282e533ceff2ebab1a6d459699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик успешного подключения  <br /></td></tr>
+<tr class="memitem:a0028518c2761defad4d923b42493463b" id="r_a0028518c2761defad4d923b42493463b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0028518c2761defad4d923b42493463b">onDisconnected</a> ()</td></tr>
+<tr class="memdesc:a0028518c2761defad4d923b42493463b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик отключения  <br /></td></tr>
+<tr class="memitem:a48cb237f8e18e0c00a7c808dcb901b42" id="r_a48cb237f8e18e0c00a7c808dcb901b42"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a48cb237f8e18e0c00a7c808dcb901b42">onErrorOccurred</a> (QAbstractSocket::SocketError error)</td></tr>
+<tr class="memdesc:a48cb237f8e18e0c00a7c808dcb901b42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик ошибки сокета  <br /></td></tr>
+<tr class="memitem:a25e5a69c0dba31cc028050c2b6eea855" id="r_a25e5a69c0dba31cc028050c2b6eea855"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a25e5a69c0dba31cc028050c2b6eea855">NetworkManager</a> (<a class="el" href="class_q_object.html">QObject</a> *parent=nullptr)</td></tr>
+<tr class="memdesc:a25e5a69c0dba31cc028050c2b6eea855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приватный конструктор (синглтон).  <br /></td></tr>
+<tr class="memitem:a93d8a0983d0906583eb4b7917bef15ec" id="r_a93d8a0983d0906583eb4b7917bef15ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a93d8a0983d0906583eb4b7917bef15ec">~NetworkManager</a> ()=default</td></tr>
+<tr class="memdesc:a93d8a0983d0906583eb4b7917bef15ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор по умолчанию  <br /></td></tr>
+<tr class="memitem:a3730b9faf9be4d7233016cae02a3c6dd" id="r_a3730b9faf9be4d7233016cae02a3c6dd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3730b9faf9be4d7233016cae02a3c6dd">NetworkManager</a> (const <a class="el" href="class_network_manager.html">NetworkManager</a> &amp;)=delete</td></tr>
+<tr class="memitem:ad781d69ece28da9721fb1b522676716c" id="r_ad781d69ece28da9721fb1b522676716c"><td class="memItemLeft"><a class="el" href="class_network_manager.html">NetworkManager</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad781d69ece28da9721fb1b522676716c">operator=</a> (const <a class="el" href="class_network_manager.html">NetworkManager</a> &amp;)=delete</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:abd13bcb5398c31f8bd0cc167c6b32df8" id="r_abd13bcb5398c31f8bd0cc167c6b32df8"><td class="memItemLeft">QTcpSocket *&#160;</td><td class="memItemRight"><a class="el" href="#abd13bcb5398c31f8bd0cc167c6b32df8">m_socket</a></td></tr>
+<tr class="memdesc:abd13bcb5398c31f8bd0cc167c6b32df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">TCP-сокет для соединения с сервером  <br /></td></tr>
+<tr class="memitem:afbcb32fa40f8593ffc31f277514dac97" id="r_afbcb32fa40f8593ffc31f277514dac97"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#afbcb32fa40f8593ffc31f277514dac97">m_role</a></td></tr>
+<tr class="memdesc:afbcb32fa40f8593ffc31f277514dac97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Роль текущего пользователя  <br /></td></tr>
+<tr class="memitem:aca79465ab8124fa07a5dffe6718b870c" id="r_aca79465ab8124fa07a5dffe6718b870c"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#aca79465ab8124fa07a5dffe6718b870c">m_login</a></td></tr>
+<tr class="memdesc:aca79465ab8124fa07a5dffe6718b870c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Логин текущего пользователя  <br /></td></tr>
+<tr class="memitem:a60ec3c0ff9a94a2027492186390be60a" id="r_a60ec3c0ff9a94a2027492186390be60a"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a60ec3c0ff9a94a2027492186390be60a">m_buffer</a></td></tr>
+<tr class="memdesc:a60ec3c0ff9a94a2027492186390be60a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Буфер для склейки частичных пакетов  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:ad2668492e4ab0622c99b8f8b4dbfd4a6" id="r_ad2668492e4ab0622c99b8f8b4dbfd4a6"><td class="memItemLeft">static <a class="el" href="class_network_manager.html">NetworkManager</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad2668492e4ab0622c99b8f8b4dbfd4a6">p_instance</a></td></tr>
+<tr class="memdesc:ad2668492e4ab0622c99b8f8b4dbfd4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на единственный экземпляр  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Синглтон для управления TCP-соединением с сервером </p>
+<p>Обеспечивает единственное TCP-соединение на весь клиент. Все окна отправляют запросы через <a class="el" href="#aff2a16fdaafaedc2a48899776b8fd9c5" title="Получить экземпляр синглтона">NetworkManager::getInstance()</a>-&gt;sendRequest(...) и подписываются на сигнал responseReceived(QString). </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a25e5a69c0dba31cc028050c2b6eea855" name="a25e5a69c0dba31cc028050c2b6eea855"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e5a69c0dba31cc028050c2b6eea855">&#9670;&#160;</a></span>NetworkManager() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkManager::NetworkManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_object.html">QObject</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приватный конструктор (синглтон). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский объект (по умолчанию nullptr) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a93d8a0983d0906583eb4b7917bef15ec" name="a93d8a0983d0906583eb4b7917bef15ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d8a0983d0906583eb4b7917bef15ec">&#9670;&#160;</a></span>~NetworkManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkManager::~NetworkManager </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор по умолчанию </p>
+
+</div>
+</div>
+<a id="a3730b9faf9be4d7233016cae02a3c6dd" name="a3730b9faf9be4d7233016cae02a3c6dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3730b9faf9be4d7233016cae02a3c6dd">&#9670;&#160;</a></span>NetworkManager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkManager::NetworkManager </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_network_manager.html">NetworkManager</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="aa2d7233230f2d609c31d9fd064c2f461" name="aa2d7233230f2d609c31d9fd064c2f461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d7233230f2d609c31d9fd064c2f461">&#9670;&#160;</a></span>connected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::connected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сигнал об успешном установлении соединения </p>
+
+</div>
+</div>
+<a id="a7285f908c20d2aac166628681bf39d50" name="a7285f908c20d2aac166628681bf39d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7285f908c20d2aac166628681bf39d50">&#9670;&#160;</a></span>connectToServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::connectToServer </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>host</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;127.0.0.1&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quint16</td>          <td class="paramname"><span class="paramname"><em>port</em></span><span class="paramdefsep"> = </span><span class="paramdefval">33333</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Подключиться к серверу </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>Адрес сервера (по умолчанию "127.0.0.1") </td></tr>
+    <tr><td class="paramname">port</td><td>Порт сервера (по умолчанию 33333) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3c9d18963e77a155faf338b86927e2e5" name="a3c9d18963e77a155faf338b86927e2e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c9d18963e77a155faf338b86927e2e5">&#9670;&#160;</a></span>disconnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::disconnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сигнал о разрыве соединения </p>
+
+</div>
+</div>
+<a id="aff2a16fdaafaedc2a48899776b8fd9c5" name="aff2a16fdaafaedc2a48899776b8fd9c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff2a16fdaafaedc2a48899776b8fd9c5">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_network_manager.html">NetworkManager</a> * NetworkManager::getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить экземпляр синглтона </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Указатель на единственный экземпляр <a class="el" href="class_network_manager.html" title="Синглтон для управления TCP-соединением с сервером">NetworkManager</a> </dd></dl>
+
+</div>
+</div>
+<a id="a97d1fb741f609c2442efdfd92e944ed2" name="a97d1fb741f609c2442efdfd92e944ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d1fb741f609c2442efdfd92e944ed2">&#9670;&#160;</a></span>isConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NetworkManager::isConnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверить состояние подключения </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true - подключение установлено, false - отключен </dd></dl>
+
+</div>
+</div>
+<a id="a0a49c2595f5f9bb8b6aee55225c1195b" name="a0a49c2595f5f9bb8b6aee55225c1195b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a49c2595f5f9bb8b6aee55225c1195b">&#9670;&#160;</a></span>login()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NetworkManager::login </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получить логин текущего пользователя </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Логин пользователя </dd></dl>
+
+</div>
+</div>
+<a id="a58117c282e533ceff2ebab1a6d459699" name="a58117c282e533ceff2ebab1a6d459699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58117c282e533ceff2ebab1a6d459699">&#9670;&#160;</a></span>onConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::onConnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик успешного подключения </p>
+
+</div>
+</div>
+<a id="a0028518c2761defad4d923b42493463b" name="a0028518c2761defad4d923b42493463b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0028518c2761defad4d923b42493463b">&#9670;&#160;</a></span>onDisconnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::onDisconnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик отключения </p>
+
+</div>
+</div>
+<a id="a48cb237f8e18e0c00a7c808dcb901b42" name="a48cb237f8e18e0c00a7c808dcb901b42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48cb237f8e18e0c00a7c808dcb901b42">&#9670;&#160;</a></span>onErrorOccurred()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::onErrorOccurred </td>
+          <td>(</td>
+          <td class="paramtype">QAbstractSocket::SocketError</td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик ошибки сокета </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>Тип ошибки </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8c95ebaf4720e37c5dfbe3433970c209" name="a8c95ebaf4720e37c5dfbe3433970c209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c95ebaf4720e37c5dfbe3433970c209">&#9670;&#160;</a></span>onReadyRead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::onReadyRead </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик готовности данных для чтения </p>
+
+</div>
+</div>
+<a id="ad781d69ece28da9721fb1b522676716c" name="ad781d69ece28da9721fb1b522676716c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad781d69ece28da9721fb1b522676716c">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_network_manager.html">NetworkManager</a> &amp; NetworkManager::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_network_manager.html">NetworkManager</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a75675e4911d4d15a5dd3f10b9ce8d871" name="a75675e4911d4d15a5dd3f10b9ce8d871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75675e4911d4d15a5dd3f10b9ce8d871">&#9670;&#160;</a></span>role()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NetworkManager::role </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получить роль текущего пользователя </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Роль пользователя ("admin" / "user" / "" если не вошли) </dd></dl>
+
+</div>
+</div>
+<a id="a960d199d4d1a93192f1ba284d51a78ab" name="a960d199d4d1a93192f1ba284d51a78ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a960d199d4d1a93192f1ba284d51a78ab">&#9670;&#160;</a></span>sendRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::sendRequest </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправить запрос на сервер </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>Строка запроса </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaa66d7c30fd48203af95d655afaea09f" name="aaa66d7c30fd48203af95d655afaea09f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa66d7c30fd48203af95d655afaea09f">&#9670;&#160;</a></span>setLogin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::setLogin </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Установить логин текущего пользователя </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a51ad29c864d04930bcce140f931d7336" name="a51ad29c864d04930bcce140f931d7336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51ad29c864d04930bcce140f931d7336">&#9670;&#160;</a></span>setRole()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager::setRole </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>role</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Установить роль текущего пользователя </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">role</td><td>Роль пользователя </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a607eeec4739fb1ac77b6f0cd1faeacac" name="a607eeec4739fb1ac77b6f0cd1faeacac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a607eeec4739fb1ac77b6f0cd1faeacac">&#9670;&#160;</a></span>__pad0__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkManager::__pad0__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60ec3c0ff9a94a2027492186390be60a" name="a60ec3c0ff9a94a2027492186390be60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60ec3c0ff9a94a2027492186390be60a">&#9670;&#160;</a></span>m_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NetworkManager::m_buffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Буфер для склейки частичных пакетов </p>
+
+</div>
+</div>
+<a id="aca79465ab8124fa07a5dffe6718b870c" name="aca79465ab8124fa07a5dffe6718b870c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca79465ab8124fa07a5dffe6718b870c">&#9670;&#160;</a></span>m_login</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NetworkManager::m_login</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Логин текущего пользователя </p>
+
+</div>
+</div>
+<a id="afbcb32fa40f8593ffc31f277514dac97" name="afbcb32fa40f8593ffc31f277514dac97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbcb32fa40f8593ffc31f277514dac97">&#9670;&#160;</a></span>m_role</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NetworkManager::m_role</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Роль текущего пользователя </p>
+
+</div>
+</div>
+<a id="abd13bcb5398c31f8bd0cc167c6b32df8" name="abd13bcb5398c31f8bd0cc167c6b32df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd13bcb5398c31f8bd0cc167c6b32df8">&#9670;&#160;</a></span>m_socket</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTcpSocket* NetworkManager::m_socket</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TCP-сокет для соединения с сервером </p>
+
+</div>
+</div>
+<a id="ad2668492e4ab0622c99b8f8b4dbfd4a6" name="ad2668492e4ab0622c99b8f8b4dbfd4a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2668492e4ab0622c99b8f8b4dbfd4a6">&#9670;&#160;</a></span>p_instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_network_manager.html">NetworkManager</a>* NetworkManager::p_instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Указатель на единственный экземпляр </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="_networkmanager_8h_source.html">Networkmanager.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_network_manager.html">NetworkManager</a></li>
+    <li class="footer">Документация по Gradient Project. Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

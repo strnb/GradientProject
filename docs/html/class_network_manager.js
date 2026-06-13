@@ -1,0 +1,27 @@
+var class_network_manager =
+[
+    [ "NetworkManager", "class_network_manager.html#a25e5a69c0dba31cc028050c2b6eea855", null ],
+    [ "~NetworkManager", "class_network_manager.html#a93d8a0983d0906583eb4b7917bef15ec", null ],
+    [ "NetworkManager", "class_network_manager.html#a3730b9faf9be4d7233016cae02a3c6dd", null ],
+    [ "connected", "class_network_manager.html#aa2d7233230f2d609c31d9fd064c2f461", null ],
+    [ "connectToServer", "class_network_manager.html#a7285f908c20d2aac166628681bf39d50", null ],
+    [ "disconnected", "class_network_manager.html#a3c9d18963e77a155faf338b86927e2e5", null ],
+    [ "getInstance", "class_network_manager.html#aff2a16fdaafaedc2a48899776b8fd9c5", null ],
+    [ "isConnected", "class_network_manager.html#a97d1fb741f609c2442efdfd92e944ed2", null ],
+    [ "login", "class_network_manager.html#a0a49c2595f5f9bb8b6aee55225c1195b", null ],
+    [ "onConnected", "class_network_manager.html#a58117c282e533ceff2ebab1a6d459699", null ],
+    [ "onDisconnected", "class_network_manager.html#a0028518c2761defad4d923b42493463b", null ],
+    [ "onErrorOccurred", "class_network_manager.html#a48cb237f8e18e0c00a7c808dcb901b42", null ],
+    [ "onReadyRead", "class_network_manager.html#a8c95ebaf4720e37c5dfbe3433970c209", null ],
+    [ "operator=", "class_network_manager.html#ad781d69ece28da9721fb1b522676716c", null ],
+    [ "role", "class_network_manager.html#a75675e4911d4d15a5dd3f10b9ce8d871", null ],
+    [ "sendRequest", "class_network_manager.html#a960d199d4d1a93192f1ba284d51a78ab", null ],
+    [ "setLogin", "class_network_manager.html#aaa66d7c30fd48203af95d655afaea09f", null ],
+    [ "setRole", "class_network_manager.html#a51ad29c864d04930bcce140f931d7336", null ],
+    [ "__pad0__", "class_network_manager.html#a607eeec4739fb1ac77b6f0cd1faeacac", null ],
+    [ "m_buffer", "class_network_manager.html#a60ec3c0ff9a94a2027492186390be60a", null ],
+    [ "m_login", "class_network_manager.html#aca79465ab8124fa07a5dffe6718b870c", null ],
+    [ "m_role", "class_network_manager.html#afbcb32fa40f8593ffc31f277514dac97", null ],
+    [ "m_socket", "class_network_manager.html#abd13bcb5398c31f8bd0cc167c6b32df8", null ],
+    [ "p_instance", "class_network_manager.html#ad2668492e4ab0622c99b8f8b4dbfd4a6", null ]
+];
