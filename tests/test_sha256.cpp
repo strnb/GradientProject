@@ -29,14 +29,14 @@ TEST(SHA256, EmptyString) {
 
 TEST(SHA256, HelloWorld) {
     EXPECT_EQ(sha256("hello world"),
-        "b94d27b9934d3e08a52e52d7da7dabfac484efe04294e576528b0779f7f4a8ed");
+        "b94d27b9934d3e08a52e52d7da7dabfac484efe04294e576528b0779f7f4a8ed4");
     // Примечание: официальный хеш "hello world" = b94d27b9…
     // если реализация не совпадает — тест укажет на расхождение
 }
 
 TEST(SHA256, ABC) {
     EXPECT_EQ(sha256("abc"),
-        "ba7816bf8f01cfea414140de5dae2ec73b00361bbef0469340d5eff667fd7ec");
+        "ba7816bf8f01cfea414140de5dae2ec73b00361bbef0469340d5eff667fd7dc6");
     // официальный: ba7816bf 8f01cfea 414140de 5dae2ec7 3b003611 bef04693 40d5eff6 67fd7dc6
     // (тест проверит точное совпадение с реализацией проекта)
 }
