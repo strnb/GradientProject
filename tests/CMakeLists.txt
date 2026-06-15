@@ -14,7 +14,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # ─── Общий код проекта (без Qt-зависимостей) ─────────────────────────────────
-set(SHARED_DIR "${CMAKE_SOURCE_DIR}/shared")
+set(SHARED_DIR "${CMAKE_SOURCE_DIR}/../shared")
 
 add_library(gradient_lib STATIC
     ${SHARED_DIR}/gradient.cpp
@@ -37,6 +37,11 @@ add_library(spline_lib STATIC
     ${SHARED_DIR}/spline.cpp
 )
 target_include_directories(spline_lib PUBLIC ${SHARED_DIR})
+
+add_library(mse_lib STATIC
+    ${SHARED_DIR}/mseutils.cpp
+)
+target_include_directories(mse_lib PUBLIC ${SHARED_DIR})
 
 # ─── Тестовые исполняемые файлы ──────────────────────────────────────────────
 enable_testing()
@@ -62,15 +67,21 @@ add_executable(test_spline test_spline.cpp)
 target_link_libraries(test_spline spline_lib GTest::gtest_main)
 add_test(NAME SplineTests COMMAND test_spline)
 
+# Тесты MSE
+add_executable(test_mse test_mse.cpp)
+target_link_libraries(test_mse mse_lib GTest::gtest_main)
+add_test(NAME MSETests COMMAND test_mse)
+
 # Единый исполняемый файл со всеми тестами
 add_executable(test_all
     test_gradient.cpp
     test_sha256.cpp
     test_vigenere.cpp
     test_spline.cpp
+    test_mse.cpp
 )
 target_link_libraries(test_all
-    gradient_lib sha256_lib vigenere_lib spline_lib
+    gradient_lib sha256_lib vigenere_lib spline_lib mse_lib
     GTest::gtest_main
 )
 target_compile_definitions(test_all PRIVATE _USE_MATH_DEFINES)
