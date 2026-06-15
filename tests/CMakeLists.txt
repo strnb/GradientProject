@@ -14,7 +14,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # ─── Общий код проекта (без Qt-зависимостей) ─────────────────────────────────
-set(SHARED_DIR "${CMAKE_SOURCE_DIR}/../shared")
+set(SHARED_DIR "${CMAKE_SOURCE_DIR}/shared")
 
 add_library(gradient_lib STATIC
     ${SHARED_DIR}/gradient.cpp

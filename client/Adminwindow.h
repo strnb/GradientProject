@@ -28,6 +28,8 @@ private slots:
     void onDeleteUser();
     void onAddUser();
     void onAddAdmin();
+    void onChangePassword();  // новое
+    void onUpgradeToAdmin();  // новое
 
 private:
     QTabWidget*   m_tabs;
@@ -39,6 +41,8 @@ private:
     QPushButton*  m_refreshUsersButton;
     QPushButton*  m_addUserButton;
     QPushButton*  m_addAdminButton;
+    QPushButton*  m_changePasswordButton;  // новое
+    QPushButton*  m_upgradeToAdminButton;  // новое
 
     // Вкладка "История запросов"
     QTableWidget* m_historyTable;
