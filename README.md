@@ -1,4 +1,4 @@
-# GradientProject 🚀
+# GradientProject 
 
 [![C++ Standard](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
 [![Framework](https://img.shields.io/badge/Framework-Qt%206-green.svg)](https://www.qt.io/)
@@ -28,7 +28,7 @@
 
 ---
 
-## 💻 Стек технологий
+## Стек технологий
 
 * **Язык программирования:** C++20 (стандарт `set(CMAKE_CXX_STANDARD 17/20)`)
 * **Фреймворк:** Qt 6 (Core, Network, Sql)
@@ -39,7 +39,7 @@
 
 ---
 
-## 🌐 Сетевой протокол (Custom TCP Protocol)
+## Сетевой протокол (Custom TCP Protocol)
 
 Клиент и сервер обмениваются текстовыми пакетами со строгим разделением токенов через символ `;`, завершающимися символами переноса строки `\r\n`. 
 
@@ -50,7 +50,7 @@
 
 ---
 
-## 📂 Структура каталогов
+## Структура каталогов
 
 ```text
 .
